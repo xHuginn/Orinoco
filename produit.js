@@ -1,0 +1,248 @@
+
+//////////////////////////////////////////////
+//////////////////////////////////////////////
+//////////////////////////////////////////////
+//////////////////////////////////////////////
+//////////////////////////////////////////////
+//////////////////////////////////////////////
+// PRODUIT
+//////////////////////////////////////////////
+//////////////////////////////////////////////
+//////////////////////////////////////////////
+//////////////////////////////////////////////
+//////////////////////////////////////////////
+//////////////////////////////////////////////
+//////////////////////////////////////////////
+//////////////////////////////////////////////
+
+
+fetch("http://localhost:3000/api/cameras")
+.then(response => response.json())
+.then(cameras => pageCamera(cameras));
+
+
+const cameraParameter = function (url, name, price, lenses, description) {
+    let main = document.getElementById('main-content')
+// 
+    let container = document.getElementById('container')
+    let rowUn = document.createElement('div')
+    rowUn.setAttribute('class', 'row')
+
+////
+    let cameraImg = document.createElement('div')
+    cameraImg.setAttribute('class', 'camera-img')
+
+    let imgOfCamera = document.createElement('img')
+    imgOfCamera.setAttribute('class', 'img_produit')
+    imgOfCamera.src = url
+////
+
+//////
+    let divUn = document.createElement('div')
+    divUn.setAttribute('class', 'camera-detail col-md-4 col-xs-12')
+
+    
+    let divDeux = document.createElement('div')
+    divDeux.setAttribute('class', 'title')
+
+    let h1 = document.createElement('h1')
+    let newh1 = document.createTextNode(`${name}`)
+////////
+
+////////
+    let divTrois = document.createElement('div')
+    divTrois.setAttribute('class', 'line')
+///////
+
+
+///////
+    let divQuatre = document.createElement('div')
+    divQuatre.setAttribute('class', 'row')
+   
+    let divCinq = document.createElement('div')
+    divCinq.setAttribute('class', 'price price-sm center-block')
+
+    let h2 = document.createElement('h2')
+    let newh2 = document.createTextNode(`${price} EUR`)
+///////
+
+//////
+    let form = document.createElement('form')
+    form.setAttribute('method', 'post')
+
+    let divSix = document.createElement('div')
+    divSix.setAttribute('class', 'select_lentille')
+   
+    let h4 = document.createElement('h4')
+    let newh4 = document.createTextNode(`${lenses}`)
+    // let newh4 = document.createTextNode(`Lentilles`)
+   
+//////
+    let divSept = document.createElement('div')
+    divSept.setAttribute('class', 'row')
+
+    let divhuit = document.createElement('div')
+    divhuit.setAttribute('class', 'col-xs-12')
+
+    let btn = document.createElement('input')
+    btn.setAttribute('class', 'add_cart_btn')
+    btn.setAttribute('type', 'submit')
+    btn.setAttribute('value', 'Ajouter au panier')
+//////
+
+//////
+    let divneuf = document.createElement('div')
+    divneuf.setAttribute('class', 'description mt-2')
+
+    let h5 = document.createElement('h5')
+    let newh5 = document.createTextNode(`Description`)
+
+    let p = document.createElement('p')
+    let newp = document.createTextNode(`${description}`)   
+    
+    main.appendChild(container)
+    container.appendChild(rowUn)
+    rowUn.appendChild(cameraImg)
+    cameraImg.appendChild(imgOfCamera)
+    rowUn.appendChild(divUn)
+    divUn.appendChild(divDeux)
+    divDeux.appendChild(h1)
+    h1.appendChild(newh1)
+    divUn.appendChild(divTrois)
+    divUn.appendChild(divQuatre)
+    divQuatre.appendChild(divCinq)
+    divCinq.appendChild(h2)
+    h2.appendChild(newh2)
+    divUn.appendChild(form)
+    form.appendChild(divSix)
+    divSix.appendChild(h4)
+    h4.appendChild(newh4)
+    divSept.appendChild(divhuit)
+    divhuit.appendChild(btn)
+    divUn.appendChild(divneuf)
+    divneuf.appendChild(h5)
+    h5.appendChild(newh5)
+    divneuf.appendChild(p)
+    p.appendChild(newp)
+}
+
+const pageCamera = function (cameras) {
+    for (product of cameras) {
+        cameraParameter(product.imageUrl, product.name, product.lenses, product.price, product.description)
+    }
+}
+
+
+
+
+
+
+
+
+
+// var data = {
+//     "category" : [
+//     {
+//         id: 1,
+//         product: [{id : 'product_1', type : 'ball'}] 
+//     },
+//     {
+//         id : 2,
+//         product :[{id : 'product_2', type : 'pen'}]
+//     }
+//     ]
+// }
+
+// function findId(data, idToLookFor) {
+//     var categoryArray = data.category;
+//     for (var i = 0; i < categoryArray.length; i++) {
+//         if (categoryArray[i].id == idToLookFor) {
+//             return(categoryArray[i].product);
+//         }
+//     }
+// }
+
+// var item = findId(data, 1);
+// // item.id, item.type
+
+
+// const cameras = [
+//     {
+//         lenses:["35mm 1.4","50mm 1.6"],
+//         _id:"5be1ed3f1c9d44000030b061",
+//         name:"Zurss 50S",
+//         price:49900,
+//         description:"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+//         imageUrl:"http://localhost:3000/images/vcam_1.jpg"
+//     },        
+//     {
+//         lenses:["50mm 1.8","60mm 2.8","24-60mm 2.8/4.5"],
+//         _id:"5be1ef211c9d44000030b062",
+//         name:"Hirsch 400DTS",
+//         description:"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+//         price:309900,
+//         imageUrl:"http://localhost:3000/images/vcam_2.jpg"
+//     },
+//     {
+//         lenses:["25mm 4.5"],
+//         _id:"5be9bc241c9d440000a730e7",
+//         name:"Franck JS 105",
+//         price:209900,
+//         description:"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+//         imageUrl:"http://localhost:3000/images/vcam_3.jpg"
+//     },
+//     {
+//         lenses:["50mm 1.7","35mm 1.4"],
+//         _id:"5be9c4471c9d440000a730e8",
+//         name:"Kuros TTS",
+//         description:"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+//         price:159900,
+//         imageUrl:"http://localhost:3000/images/vcam_4.jpg"
+//     },
+//     {
+//         lenses:["50mm 1.4","35mm 1.8","28-200mm 2.8/4.5"],
+//         _id:"5be9c4c71c9d440000a730e9",
+//         name:"Katatone",
+//         description:"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+//         price:59900,
+//         imageUrl:"http://localhost:3000/images/vcam_5.jpg"
+//     }
+// ]
+
+// var result = cameras.filter(function(element){
+//     if (element._id == 5be9c4c71c9d440000a730e9){
+//         return true;
+//     } else {
+//         return false;
+//     }
+// });
+
+
+
+
+// var urlParts = window.location.href.split(/\//)
+// //window.location.href = http://domain.com/category/1
+// // urlParts = ['http:', '', 'domain.com', 'category', '1']
+// var id = urlParts.pop();
+// var category = urlParts.pop();
+
+// var data = JSON.parse('{"category" : [{"id": 1, "product": [{"id" : "product_1", "type" : "ball"}] }, {"id" : 2, "product" :[{"id" : "product_2", "type" : "pen"}] } ]}');
+
+// function findId(data, idToLookFor) {
+//     var categoryArray = data.category;
+//     for (var i = 0; i < categoryArray.length; i++) {
+//         if (categoryArray[i].id == idToLookFor) {
+//             return(categoryArray[i].product);
+//         }
+//     }
+// }
+
+// var item = findId(data.category, id);
+
+
+
+
+
+
+    
+
