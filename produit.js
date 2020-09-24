@@ -63,8 +63,13 @@ const cameraParameter = function (url, name, price, lenses, description) {
     divCinq.setAttribute('class', 'price price-sm center-block')
 
     let h2 = document.createElement('h2')
-    let newh2 = document.createTextNode(`${price} EUR`)
+    let newh2 = document.createTextNode(`${price /100} €`)
 ///////
+
+
+
+
+
 
 //////
     let form = document.createElement('form')
@@ -74,9 +79,12 @@ const cameraParameter = function (url, name, price, lenses, description) {
     divSix.setAttribute('class', 'select_lentille')
    
     let h4 = document.createElement('h4')
-    let newh4 = document.createTextNode(`${lenses}`)
+    let newh4 = document.createTextNode(`Lentille :`)
     // let newh4 = document.createTextNode(`Lentilles`)
-   
+    // let choiceLenses = document.createElement('select')
+    // for ()
+
+
 //////
     let divSept = document.createElement('div')
     divSept.setAttribute('class', 'row')
@@ -90,6 +98,11 @@ const cameraParameter = function (url, name, price, lenses, description) {
     btn.setAttribute('value', 'Ajouter au panier')
 //////
 
+
+
+
+
+
 //////
     let divneuf = document.createElement('div')
     divneuf.setAttribute('class', 'description mt-2')
@@ -100,25 +113,33 @@ const cameraParameter = function (url, name, price, lenses, description) {
     let p = document.createElement('p')
     let newp = document.createTextNode(`${description}`)   
     
+    // Mise en place du container
     main.appendChild(container)
     container.appendChild(rowUn)
+    // Image
     rowUn.appendChild(cameraImg)
     cameraImg.appendChild(imgOfCamera)
+    // Récupération div pour nom
     rowUn.appendChild(divUn)
+    // Nom Cam
     divUn.appendChild(divDeux)
     divDeux.appendChild(h1)
     h1.appendChild(newh1)
+    // Ligne séparation
     divUn.appendChild(divTrois)
+    // Prix
     divUn.appendChild(divQuatre)
     divQuatre.appendChild(divCinq)
     divCinq.appendChild(h2)
     h2.appendChild(newh2)
+    // Formulaire (menu selection lentilles + QTY + BTN)
     divUn.appendChild(form)
     form.appendChild(divSix)
     divSix.appendChild(h4)
     h4.appendChild(newh4)
     divSept.appendChild(divhuit)
     divhuit.appendChild(btn)
+    // Description
     divUn.appendChild(divneuf)
     divneuf.appendChild(h5)
     h5.appendChild(newh5)
@@ -128,7 +149,7 @@ const cameraParameter = function (url, name, price, lenses, description) {
 
 const pageCamera = function (cameras) {
     for (product of cameras) {
-        cameraParameter(product.imageUrl, product.name, product.lenses, product.price, product.description)
+        cameraParameter(product.imageUrl, product.name, product.price, product.lenses, product.description)
     }
 }
 
