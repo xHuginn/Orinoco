@@ -50,7 +50,7 @@
 //     let newcardTextCreate = document.createTextNode(`${description}`);
 
 //     let button = document.createElement('button')
-//     button.setAttribute('class', 'btn btn-sm btn-outline-secondary')
+//     
 
 //     let newButton = document.createTextNode(`Découvrir`);
     
@@ -103,6 +103,11 @@
 
 // window.onload = changeImg;
 
+
+
+
+
+
 // Carousel 
 // Init de i
 let i = 0;
@@ -140,36 +145,54 @@ fetch("http://localhost:3000/api/cameras")
 
 // Fonction paramètres des cartes
 function cardParameter(txt, url, price, id) {
-    let div = document.getElementById('content');
+    let content = document.getElementById('content');
+    content.setAttribute('class', 'row')
+
+    let grille = document.createElement('div')
+    grille.setAttribute('class', 'col-md-4 col-sm-6')
+
+    content.appendChild(grille);
+
     let divCard = document.createElement('div');
-    divCard.className = "card";
-    div.appendChild(divCard);
-    Image(divCard, url);
+    divCard.setAttribute('class', 'card mb-4 shadow-sm')
+
+    grille.appendChild(divCard);
+
     Name(divCard, txt);
-    Description(divCard, price);
-    console.log(txt);
-    console.log(id);
-    Link(divCard, txt, id);
-}
-// fonction appelle de l'img
-function Image(card, url) {
-    let imgCard = document.createElement('img')
-    imgCard.setAttribute('class', 'imgID')
-    // indique que la src est l'url de l'Img
-    imgCard.src = url
-    card.appendChild(imgCard)
+    Image(divCard, url);
+
+    let cardBody = document.createElement('div')
+    cardBody.setAttribute('class', 'card-body')
+    divCard.appendChild(cardBody)
+
+    let divBody = document.createElement('div');
+    divBody.setAttribute('class', 'card ')
+    Description(cardBody, price);
+    Link(cardBody, txt, id);
 }
 // fonction appelle du nom
 function Name(card, txt) {
     let cardTitleCreate = document.createElement('h5')
     let newcardTitleCreate = document.createTextNode(txt);
+    cardTitleCreate.setAttribute('class', 'card-title') 
     card.appendChild(cardTitleCreate)
     cardTitleCreate.appendChild(newcardTitleCreate)
 }
+
+// fonction appelle de l'img
+function Image(card, url) {
+    let imgCard = document.createElement('img')
+    imgCard.setAttribute('class', 'imgID w-100')
+    // indique que la src est l'url de l'Img
+    imgCard.src = url
+    card.appendChild(imgCard)
+}
+
 // fonction appelle du prix
 function Description(card, price) {
       let cardTextCreate = document.createElement('p')
     let newcardTextCreate = document.createTextNode(`${price/100} €`); 
+    cardTextCreate.setAttribute('class', 'card-text')
     card.appendChild(cardTextCreate)
     cardTextCreate.appendChild(newcardTextCreate)
 }
@@ -188,7 +211,7 @@ function Link(card, name, id) {
         }) 
     card.appendChild(form);
     form.appendChild(link);
-
+    link.setAttribute('class', 'btn btn-sm btn-outline-secondary')
 }
 // fonction qui prends l'API 
 function card(cameras) {

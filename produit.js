@@ -337,7 +337,7 @@ fetch(`http://localhost:3000/api/cameras/${id}`)
         `<div class="col mb-4">
             <div class="card">
                 <h5 class="card-title">${camera.name}</h5>
-                    <img src="${camera.imageUrl}" class="card-img-top" alt="${camera.name}">
+                    <img src="${camera.imageUrl}" class="card-img-top img_produit" alt="${camera.name}">
 
                     <div class="card-body">
                     <div class="roo">
