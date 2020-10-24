@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Grenze+Gotisch:wght@600;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style_2.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+  integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+  crossorigin="anonymous">
+  <title>Orinoco | Prototype</title>
+</head>
+<style>
+  .navbar, .page-footer {
+    background: #8A7E72!important;
+  }
+
+.navbar {
+  height: 100px!important;
+}
+
+  a {
+    color: #EEFFDB!important;
+    text-decoration: none!important;
+}
+a:hover {
+  color: #000000!important;
+}
+/* 
+img {
+  width: 300px;
+  height: auto;
+  display: block;
+  margin: auto;
+} */
+
+.slide {
+  margin-bottom: 55px;
+  border: 2px black solid;
+  width: 1110px;
+  height: 693px;
+}
+
+
+.img_produit {
+    width: 580px;
+    height: 580px;
+    /* Non indispensable */
+    margin-bottom: 50px;
+}
+.line {
+    height: 3px;
+    background-color: rgb(255, 123, 0);
+}
+
+.main-content {
+    padding-top: 110px;
+}
+
+.title h1, .price, .description {
+    font-family: 'Anton', sans-serif;
+   
+}
+
+.description p {
+    font-family: Verdana, 'Geneva', Tahoma, sans-serif;
+}
+
+.title h1{
+    font-size: 2.8rem;
+    margin: 12px 15px 25px 45px;
+}
+.price {
+    text-align: center;
+    margin: 25px auto;
+}
+
+form {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+form h4 {
+    font-size: 1rem;
+}
+
+.add_cart_btn {
+    padding: 15px 90px;
+    background-color: #fff;
+    border: 3px solid black;
+    border-radius: 3px;
+    margin: 15px ;
+    font-family: "Grenze Gotisch", sans-serif;
+    font-size: 1.5rem;
+}
+
+.add_cart_btn:hover {
+    background-color: black;
+    color: white;
+    border: 4px double white;
+}
+
+.select_lentille, .select_qty {
+    margin: 15px;
+}
+
+.btn_center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+}
+.card {
+  width: 350px;
+}
+.roo {
+  /* display: flex; */
+  font-size: 1rem;
+}
+
+label {
+  margin: 15px;
+}
+input{
+  
+}
+
+option {
+  
+}
+
+#select {
+  margin-left: 55px;
+}
+
+.section-header {
+    font-family: "Metal Mania";
+    font-weight: normal;
+    color: #333;
+    text-align: center;
+    font-size: 2.5em;
+}
+.cart-header {
+    font-weight: bold;
+    font-size: 1.3rem;
+    color: #0a0202;
+    
+}
+
+.cart-column {
+    display: flex;
+    align-items: center;
+    margin-right: 1.5em;
+    padding-bottom: 10px;
+    margin-top: 10px;
+}
+
+.cart-row {
+    display: flex;
+    border-bottom: 2px solid black;
+}
+
+.cart-item {
+    width: 20%;
+}
+.card-text {
+  width: 15%;
+  margin-top: 15px;
+  font-size: 1.1rem;
+}
+
+.cart-price {
+    width: 20%;
+    font-size: 1.2em;
+    color: #333;
+}
+
+.cart-quantity {
+    width: 35%;
+    padding-left: 55px;
+}
+
+.cart-item-title {
+    color: #000;
+    margin-left: .5em;
+    font-size: 1.2em;
+}
+
+.cart-item-image {
+    width: 75px;
+    height: auto;
+    border-radius: 5px;
+}
+
+.btn-danger {
+    color: #f3efef;
+    background-color: #e91111;
+    border: none;
+    border-radius: .3em;
+    font-weight: bold;
+}
+
+.btn-danger:hover {
+    background-color: #910707;
+}
+
+.cart-quantity-input {
+    height: 34px;
+    width: 50px;
+    border-radius: 5px;
+    border: 1px solid #d1641c;
+    background-color: #eee;
+    color: #333;
+    padding: 0;
+    text-align: center;
+    font-size: 1.2em;
+    margin-right: 25px;
+}
+
+.cart-row:last-child {
+    border-bottom: 1px solid black;
+}
+
+.cart-row:last-child .cart-column {
+    border: none;
+}
+
+.cart-total {
+    text-align: end;
+    margin-top: 10px;
+    margin-right: 10px;
+}
+
+.cart-total-title {
+    font-weight: bold;
+    font-size: 1.5em;
+    color: black;
+    margin-right: 20px;
+}
+
+.cart-total-price {
+    color: #333;
+    font-size: 1.1em;
+}
+
+.btn-purchase {
+    display: block;
+    margin: 40px auto 80px auto;
+    font-size: 1.75em;
+}
+</style>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark primary-color">
+
+  <a class="navbar-brand" href="index.html">
+    <img src="./img/logo.svg" width="65" height="65" alt="Logo" />
+    <img src="./img/dessin.svg" width="65" height="65" alt="Orinoco"/>
+  </a>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
+    aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="basicExampleNav">
+
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Acceuil
+          <span class="sr-only">(current)</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="produit.html">Service</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Contact</a>
+      </li>
+    </ul>
+
+    <form class="form-inline">
+      <div class="md-form my-0">
+        <input class="form-control mr-sm-2" type="text" placeholder="Rechercher..." aria-label="Search">
+      </div>
+    </form>
+  </div>
+</nav>
+<div id="content"></div>
+
+<section class="u main-content" id="main-content">
+    <div class="container" id="container"></div>
+</section>
+
+
+
+<section class="container content-section">
+  <h2 class="section-header">Votre panier :</h2>
+  <div class="cart-row">
+      <span id="cam" class="cart-item cart-header cart-column">Caméra</span>
+      <span id="lense" class="cart-lenses cart-header cart-column">Lentille</span>
+      <span id="price" class="cart-price cart-header cart-column">Prix</span>
+      <span id="qty" class="cart-quantity cart-header cart-column">Quantité</span>
+      
+  </div>
+  <div id="cart-items" class="cart-items">
+  </div>
+  <div class="cart-total">
+      <strong class="cart-total-title">Total</strong>
+      <span class="cart-total-price">0€</span>
+  </div>
+  <button class="btn btn-success btn-purchase" type="button">Valider la commande</button>
+</section>
+
+<script>
+// Récupère du sessionStorage l'ID
+let id = sessionStorage.getItem("id")
+let lenses = sessionStorage.getItem("selected")
+let qtyCam = sessionStorage.getItem("qty")
+console.log(lenses)
+// Ajoute l'ID à l'API afin de le récupérer
+fetch(`http://localhost:3000/api/cameras/${id}`)
+// Si la response est ok alors retourne le JSON sinon error
+.then ( response => {
+  if (response.ok) {
+            return response.json()
+    } else {
+      console.error(`Retour du serveur : ${response.status}`)
+    }
+})
+// .then(panier => {
+  
+// })
+// Si c'est ok alors camera = (let card)
+.then( camera => {
+  let cam = document.getElementById('cam')
+  let lense = document.getElementById('lense')
+  let price = document.getElementById('price')
+  let qty = document.getElementById('qty')
+  let cartItems = document.getElementById('cart-items')
+  let allItems = document.createElement('div')
+  allItems.setAttribute('id', 'newItem')
+  let yourCam =
+//   HTML de la card
+        `<div class="cart-row">
+            <div class="cart-item cart-column">
+                    <img src="${camera.imageUrl}" class="cart-item-image" alt="${camera.name}">
+                    <span class="cart-item-title">${camera.name}</span>
+            </div>
+            <span class="card-text">${lenses}</span>
+            <span class="card-text">${camera.price / 100}€</span>
+
+            <div class="cart-quantity cart-column">
+              <input class="cart-quantity-input" type="number" value="${qtyCam}">
+              <button id="deleteCam" class="btn btn-danger" type="button">Supprimer</button>
+            </div>
+          </div>`;
+          allItems.innerHTML += yourCam;
+        cartItems.appendChild(allItems)
+})
+
+function Del () {
+  let deleteCam = document.getElementById('deleteCam')
+deleteCam.addEventListener('click', DeleteCamOnCart => {
+  let body = document.querySelector(body)
+  body.style.backgroundColor = "red"
+  let cartItems = document.getElementById('cart-items')
+  let allItems = document.getElementById('allItems')      
+  let newDiv = document.getElementById('newDiv')
+  cartItems.removeChild(allItems)   
+        })
+}
+
+
+  
+</script>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  </body>
+  </html>
