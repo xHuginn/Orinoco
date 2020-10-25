@@ -113,9 +113,9 @@
 let i = 0;
 // Tableau des imgs du carousel
 let img = [
-    './img/cam_3.png',
-    './img/img_cam_2.jpg',
-    './img/banniere.png'
+    '../img/cam_3.png',
+    '../img/img_cam_2.jpg',
+    '../img/banniere.png'
 ];
 // Temps où on voit l'img
 let time = 4000;

@@ -6,15 +6,16 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <link href="https://fonts.googleapis.com/css2?family=Anton&family=Grenze+Gotisch:wght@600;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style_2.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/produit.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
   integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
   crossorigin="anonymous">
-  <title>Orinoco | Prototype</title>
+  <title>Orinoco | Produit</title>
 </head>
 <style>
   .navbar, .page-footer {
-    background: #8A7E72!important;
+    background: #696461!important;
   }
 
 .navbar {
@@ -44,14 +45,46 @@ img {
 }
 
 .u {
-    height: 3100px;
+    height: 1500px;
 }
 .img_produit {
-    width: 580px;
-    height: 580px;
-    /* Non indispensable */
-    margin-bottom: 50px;
+    width: 480px;
+    height: 480px;
+    margin: auto;
 }
+
+.card {
+  width: 520px;
+  margin: auto;
+}
+
+.card-title {
+  margin: auto;
+  font-size: 2.5rem;
+  font-family: 'Lobster', cursive;
+}
+
+.roo {
+  margin: 15px;
+  font-family: 'Lobster', cursive;
+}
+
+select {
+  margin: 10px 15px;
+  font-family: 'Lobster', cursive;
+}
+
+.card-text {
+  font-size: 1.2rem;
+  margin: 15px;
+  font-family: 'Lobster', cursive;
+}
+
+button {
+  margin: 15px;
+  font-family: 'Lobster', cursive;
+}
+
 .line {
     height: 3px;
     background-color: rgb(255, 123, 0);
@@ -156,61 +189,8 @@ form h4 {
 </nav>
 
 
-<section class="u main-content" id="main-content">
-        <div class="container" id="container">
-            <!-- <div class="row">
-                <div id="camera-img">
-                    <img src="http://localhost:3000/images/vcam_1.jpg" class="img_produit mr-5" alt="">
-                </div>
-                <div class="camera-detail col-md-4 col-xs-12">
-                    <div class="title">
-                        <h1>Zurss 50S</h1>
-                    </div>
-                    <div class="line"></div>
-                    <div class="row">
-                        <div class=" price price-sm center-block">
-                            <h2>499 EUR</h2>
-                        </div>
-                    </div>
+<div id="content"></div>
 
-                    <form action="" method="post">
-                        <div class="select_lentille">
-                            <h4>Lentilles</h4>
-                            <select name="lentilles" id="">
-                                <option value="">Sélectionnez</option>
-                                <option value="">35mm 1.4</option>
-                                <option value="">50mm 1.6</option>
-                            </select>
-                        </div>
-                        <div class="select_qty">
-                            <h4>Quantité</h4>
-                        <select name="quantite" id="">
-                            <option value="">1</option>
-                            <option value="">2</option>
-                            <option value="">3</option>
-                            <option value="">4</option>
-                            <option value="">5</option>
-                            <option value="">6</option>
-                        </select>
-                        </div>
-                        
-                         lentilles + QTY + Add to cart 
-                    <div class="row">
-                        <div class="col-xs-12">
-                            <input class="add_cart_btn" type="submit" value="Ajouter au panier">
-                        </div>
-                    </div>
-                    </form>
-                    <div class="description mt-2">
-                        <h4>DESCRIPTION</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                         description
-                    </div>
-                </div>
-            </div> -->
-
-        </div>
-</section>
 
 
 
@@ -309,7 +289,7 @@ form h4 {
 <!-- Footer -->
     <!-- <div id="content"></div> -->
 
-    <script src="./produit.js"></script>
+    <script src="../javascript/produit.js"></script>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>

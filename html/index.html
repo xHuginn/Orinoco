@@ -2,159 +2,27 @@
 <html lang="fr">
 
 <head>
-  <!-- Required meta tags -->
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
   <link href="https://fonts.googleapis.com/css2?family=Anton&family=Grenze+Gotisch:wght@600;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style_2.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/index.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
   integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
   crossorigin="anonymous">
-  <title>Orinoco | Produit</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+
+  <title>Orinoco | Accueil</title>
 </head>
-<style>
-  .navbar, .page-footer {
-    background: #696461!important;
-  }
 
-.navbar {
-  height: 100px!important;
-}
-
-  a {
-    color: #EEFFDB!important;
-    text-decoration: none!important;
-}
-a:hover {
-  color: #000000!important;
-}
-/* 
-img {
-  width: 300px;
-  height: auto;
-  display: block;
-  margin: auto;
-} */
-
-.slide {
-  margin-bottom: 55px;
-  border: 2px black solid;
-  width: 1110px;
-  height: 693px;
-}
-
-.u {
-    height: 1500px;
-}
-.img_produit {
-    width: 480px;
-    height: 480px;
-    margin: auto;
-}
-
-.card {
-  width: 520px;
-  margin: auto;
-}
-
-.card-title {
-  margin: auto;
-  font-size: 2.5rem;
-  font-family: 'Lobster', cursive;
-}
-
-.roo {
-  margin: 15px;
-  font-family: 'Lobster', cursive;
-}
-
-select {
-  margin: 10px 15px;
-  font-family: 'Lobster', cursive;
-}
-
-.card-text {
-  font-size: 1.2rem;
-  margin: 15px;
-  font-family: 'Lobster', cursive;
-}
-
-button {
-  margin: 15px;
-  font-family: 'Lobster', cursive;
-}
-
-.line {
-    height: 3px;
-    background-color: rgb(255, 123, 0);
-}
-
-.main-content {
-    padding-top: 110px;
-}
-
-.title h1, .price, .description {
-    font-family: 'Anton', sans-serif;
-   
-}
-
-.description p {
-    font-family: Verdana, 'Geneva', Tahoma, sans-serif;
-}
-
-.title h1{
-    font-size: 2.8rem;
-    margin: 12px 15px 25px 45px;
-}
-.price {
-    text-align: center;
-    margin: 25px auto;
-}
-
-form {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-form h4 {
-    font-size: 1rem;
-}
-
-.add_cart_btn {
-    padding: 15px 90px;
-    background-color: #fff;
-    border: 3px solid black;
-    border-radius: 3px;
-    margin: 15px ;
-    font-family: "Grenze Gotisch", sans-serif;
-    font-size: 1.5rem;
-}
-
-.add_cart_btn:hover {
-    background-color: black;
-    color: white;
-    border: 4px double white;
-}
-
-.select_lentille, .select_qty {
-    margin: 15px;
-}
-
-.btn_center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    align-self: center;
-}
-
-</style>
 <body>
-
+  <!--Navbar-->
 <nav class="navbar navbar-expand-lg navbar-dark primary-color">
 
   <a class="navbar-brand" href="index.html">
-    <img src="./img/logo.svg" width="65" height="65" alt="Logo" />
-    <img src="./img/dessin.svg" width="65" height="65" alt="Orinoco"/>
+    <img src="../img/logo.svg" width="65" height="65" alt="Logo" />
+    <img src="../img/dessin.svg" width="65" height="65" alt="Orinoco"/>
   </a>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
@@ -186,34 +54,39 @@ form h4 {
   </div>
 
 </nav>
+<!--/Navbar-->
 
+<!-- Contenu page -->
+  <div class="container py-5 bg-light">
 
-<div id="content"></div>
+<!-- Carousel -->
+    <div class="carousel">
+      <img src="" name="carousel" class="slide">
+    </div>
+<!-- /Carousel -->
 
+<!-- Cartes + titre -->
+    <h2 class="display-4 text-center mb-5">Nos dernières offres :</h2>
+      <div id="content">
+          <!-- JS Content -->
+      </div> 
+<!-- /Cartes + titre -->
+  </div>
+<!-- /Contenu page -->
 
+<!-- Footer -->
 
-
-
-
-
-
-                <!-- Footer -->
-<footer class="page-footer font-small unique-color-dark bg-light">
+<footer class="page-footer font-small unique-color-dark">
 
   <div class="container text-center text-md-left mt-5">
-
     <div class="row mt-3">
-
       <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
-
         <h6 class="text-uppercase font-weight-bold">Orinoco</h6>
         <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, perspiciatis expedita. Corrupti modi ipsam excepturi repellat nobis necessitatibus, odit ex explicabo, quidem quibusdam beatae veritatis.</p>
       </div>
 
-
       <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
-
         <h6 class="text-uppercase font-weight-bold">Nos sites</h6>
         <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
         <p>
@@ -231,9 +104,7 @@ form h4 {
 
       </div>
 
-
       <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
-
         <h6 class="text-uppercase font-weight-bold">Liens utiles</h6>
         <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
         <p>
@@ -248,14 +119,9 @@ form h4 {
         <p>
           <a href="#!">Aide</a>
         </p>
-
       </div>
-      <!-- Grid column -->
 
-      <!-- Grid column -->
       <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
-
-        <!-- Links -->
         <h6 class="text-uppercase font-weight-bold">Contact</h6>
         <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
         <p>
@@ -266,29 +132,24 @@ form h4 {
           <i class="fas fa-phone mr-3"></i> 05 11 50 78 52</p>
         <p>
           <i class="fas fa-print mr-3"></i> 05 11 50 78 52</p>
-
       </div>
-      <!-- Grid column -->
-
     </div>
-    <!-- Grid row -->
-
   </div>
-  <!-- Footer Links -->
 
   <!-- Copyright -->
+
   <div class="footer-copyright text-center py-3">© 2020 Copyright:
-    <a href="./melange.html"> Orinoco.com</a>
+    <a href="./index.html"> Orinoco.com</a>
   </div>
+
   <!-- Copyright -->
 
 </footer>
 
+<!-- /Footer -->
 
-<!-- Footer -->
-    <!-- <div id="content"></div> -->
-
-    <script src="./produit.js"></script>
+<!-- Liens JS + Bootstrap -->
+    <script src="../javascript/index.js"></script>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
