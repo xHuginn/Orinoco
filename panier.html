@@ -6,15 +6,18 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <link href="https://fonts.googleapis.com/css2?family=Anton&family=Grenze+Gotisch:wght@600;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style_2.css">
+  <!-- <link rel="stylesheet" href="style_2.css"> -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
   integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
   crossorigin="anonymous">
   <title>Orinoco | Prototype</title>
 </head>
 <style>
+  body {
+  background-color: #d4cbc6;    
+  }
   .navbar, .page-footer {
-    background: #8A7E72!important;
+    background: #696461!important;
   }
 
 .navbar {
@@ -56,7 +59,9 @@ img {
 }
 
 .main-content {
-    padding-top: 110px;
+    margin-top: 55px;
+    display: flex;
+    justify-content: space-around;
 }
 
 .title h1, .price, .description {
@@ -113,7 +118,10 @@ form h4 {
     align-self: center;
 }
 .card {
-  width: 350px;
+  width: 750px;
+  display: flex;
+  flex-direction: row!important;
+  border-radius: 15px;
 }
 .roo {
   /* display: flex; */
@@ -166,9 +174,11 @@ option {
     width: 20%;
 }
 .card-text {
-  width: 15%;
+  /* width: 15%;
   margin-top: 15px;
   font-size: 1.1rem;
+  margin-left: 22px; */
+  margin-bottom: 20px;
 }
 
 .cart-price {
@@ -178,9 +188,12 @@ option {
 }
 
 .cart-quantity {
-    width: 35%;
-    padding-left: 55px;
+    width: 85%;
+    /* padding-left: 55px; */
+    /* display: flex; */
+    /* justify-content: space-between; */
 }
+
 
 .cart-item-title {
     color: #000;
@@ -217,6 +230,7 @@ option {
     text-align: center;
     font-size: 1.2em;
     margin-right: 25px;
+    margin-left: 5px;
 }
 
 .cart-row:last-child {
@@ -249,6 +263,67 @@ option {
     display: block;
     margin: 40px auto 80px auto;
     font-size: 1.75em;
+}
+
+
+/* test */
+
+.card-img-top {
+  height: 250px;
+  width: 280px;
+  border-radius: 15px;
+}
+.card-title {
+  font-size: 1.8rem;
+  margin: 12px;
+}
+.card-body {
+  
+}
+
+.details {
+  padding: 0.5rem 2rem;
+  text-align: justify;
+}
+span {
+  margin: 0;
+}
+.stock {
+  font-style: italic;
+  color: #15ad10;
+}
+.btn-outline-danger {
+  color: #e70a0a;
+  border-color: #e20707;
+}
+.btn-outline-danger:hover {
+  color: #fafafa;
+  background: #e20707;
+}
+
+.details--cart {
+  margin-bottom: 4px;
+}
+
+p {
+  /* margin: 0; */
+}
+
+#btn-commande {
+  background-color: #f07715;
+  color: #000;
+  border: 2px solid  #e46d19;
+  border-radius: 5px;
+  padding: 8px;
+}
+#btn-commande:hover {
+  background-color: #d36c0c;
+  border-color: #f1be17;
+}
+
+.imgOnly {
+  margin: auto;
+  margin-left: 25px;
 }
 </style>
 <body>
@@ -288,22 +363,64 @@ option {
     </form>
   </div>
 </nav>
-<div id="content"></div>
 
-<section class="u main-content" id="main-content">
-    <div class="container" id="container"></div>
+<section class="main-content" id="main-content">
+  <!-- Carte avec article -->
+    <div id="content"></div>
+
+  <!-- Montant de la commande -->
+    <div class="total" id="total">
+      <h3>Montant total</h3>
+
+      <div class="details--cart">
+        <p>Montant hors taxe</p>
+        <p>Livraison gratuite</p>
+      </div>
+
+    <div class="totalTTC">
+      <p>Montant TTC</p>
+    </div>
+
+    <form>
+      <input id="btn-commande" type="button" value="Passer la commande">
+    </form>
+    </div>
 </section>
 
 
+<!-- <div class="col mb-4">
+            <div class="card">
+                <h5 class="card-title">Nom</h5>
+                    <img src="" class="card-img-top" alt="image">
 
+                    <div class="card-body">
+                    <div class="roo">
+                        <label for="selectQTY">Quantité :</label>
+                        <input type="number" id="selectQTY" name="selectQTY"
+                        min="1" max="30">
+                    </div>
+
+                    <select id="select" name="lentille">
+                        <option selected disabled >Lentilles :</option>
+                    </select>
+                    </div>
+
+                        <div class="details">
+                            <p class="card-text">description</p>
+                            <p class="card-text">Prix :</p>
+                            <button type="button" id="ajoutPanier" class="btn btn-outline-success">Ajouter au panier</button>
+                        </div>
+            </div>
+         </div> -->
+
+<!-- 
 <section class="container content-section">
   <h2 class="section-header">Votre panier :</h2>
   <div class="cart-row">
       <span id="cam" class="cart-item cart-header cart-column">Caméra</span>
       <span id="lense" class="cart-lenses cart-header cart-column">Lentille</span>
       <span id="price" class="cart-price cart-header cart-column">Prix</span>
-      <span id="qty" class="cart-quantity cart-header cart-column">Quantité</span>
-      
+      <span id="qty" class="cart-quantity cart-header cart-column">Quantité</span>  
   </div>
   <div id="cart-items" class="cart-items">
   </div>
@@ -312,7 +429,7 @@ option {
       <span class="cart-total-price">0€</span>
   </div>
   <button class="btn btn-success btn-purchase" type="button">Valider la commande</button>
-</section>
+</section> -->
 
 <script>
 // Récupère du sessionStorage l'ID
@@ -335,46 +452,113 @@ fetch(`http://localhost:3000/api/cameras/${id}`)
 // })
 // Si c'est ok alors camera = (let card)
 .then( camera => {
-  let cam = document.getElementById('cam')
+    let cam = document.getElementById('cam')
   let lense = document.getElementById('lense')
   let price = document.getElementById('price')
   let qty = document.getElementById('qty')
   let cartItems = document.getElementById('cart-items')
   let allItems = document.createElement('div')
   allItems.setAttribute('id', 'newItem')
-  let yourCam =
+  let card =
 //   HTML de la card
-        `<div class="cart-row">
-            <div class="cart-item cart-column">
-                    <img src="${camera.imageUrl}" class="cart-item-image" alt="${camera.name}">
-                    <span class="cart-item-title">${camera.name}</span>
-            </div>
-            <span class="card-text">${lenses}</span>
-            <span class="card-text">${camera.price / 100}€</span>
+        `<div id="article">
+            <div class="card">
+              <div class="imgOnly">
+                <img src="${camera.imageUrl}" class="card-img-top" alt="${camera.name}">
+              </div>
+              <div class="details"> 
+              <h5 class="card-title">${camera.name}</h5> 
+                    <div class="card-body">
+                    <div class="cart-quantity cart-column">
+                      <p>Quantité :</p>
+                      <input class="cart-quantity-input" type="number" value="${qtyCam}">
+                    </div>
+                    <span class="card-text">Lentilles : ${lenses}</span>
+                    </div>
 
-            <div class="cart-quantity cart-column">
-              <input class="cart-quantity-input" type="number" value="${qtyCam}">
-              <button id="deleteCam" class="btn btn-danger" type="button">Supprimer</button>
-            </div>
-          </div>`;
-          allItems.innerHTML += yourCam;
-        cartItems.appendChild(allItems)
-})
+                    
 
-function Del () {
-  let deleteCam = document.getElementById('deleteCam')
-deleteCam.addEventListener('click', DeleteCamOnCart => {
-  let body = document.querySelector(body)
-  body.style.backgroundColor = "red"
-  let cartItems = document.getElementById('cart-items')
-  let allItems = document.getElementById('allItems')      
-  let newDiv = document.getElementById('newDiv')
-  cartItems.removeChild(allItems)   
+                        <div class="card-body">
+                          <span class="stock">En stock</span>
+                            <p class="card-text">${camera.description}</p>
+                            <p class="card-text">${camera.price / 100}€</p>
+                            <button type="button" id="deleteCam" class="btn btn-outline-danger">Supprimer</button>
+                        </div>
+            </div>
+          </div>
+         </div>`;
+        content.innerHTML += card;
+
+        
+        
+        let selectQTY = document.getElementById('selectQTY')
+
+        
+        const selectBTN = document.querySelector('#select')
+       
+        function DelElementOnCart () {
+          let deleteCam = document.getElementById('deleteCam')
+          deleteCam.addEventListener('click', DeleteCamOnCart => {
+          let body = document.getElementById('coucou')
+          body.style.backgroundColor = "red"
+          let article = document.getElementById('article')
+          let content = document.getElementById('content')      
+          // let newDiv = document.getElementById('newDiv')
+          content.removeChild(article)   
+                })
+          }
+          DelElementOnCart()
+
+
+
+
+
+
+
+
+
         })
-}
+       
 
 
-  
+//   let cam = document.getElementById('cam')
+//   let lense = document.getElementById('lense')
+//   let price = document.getElementById('price')
+//   let qty = document.getElementById('qty')
+//   let cartItems = document.getElementById('cart-items')
+//   let allItems = document.createElement('div')
+//   allItems.setAttribute('id', 'newItem')
+//   let yourCam =
+// //   HTML de la card
+//         `<div class="cart-row">
+//             <div class="cart-item cart-column">
+//                     <img src="${camera.imageUrl}" class="cart-item-image" alt="${camera.name}">
+//                     <span class="cart-item-title">${camera.name}</span>
+//             </div>
+//             <span class="card-text">${lenses}</span>
+//             <span class="card-text">${camera.price / 100}€</span>
+
+//             <div class="cart-quantity cart-column">
+//               <input class="cart-quantity-input" type="number" value="${qtyCam}">
+//               <button id="deleteCam" class="btn btn-danger" type="button">Supprimer</button>
+//             </div>
+//           </div>`;
+//           allItems.innerHTML += yourCam;
+//         cartItems.appendChild(allItems)
+// })
+
+// function Del () {
+//   let deleteCam = document.getElementById('deleteCam')
+// deleteCam.addEventListener('click', DeleteCamOnCart => {
+//   let body = document.querySelector('body')
+//   body.style.backgroundColor = "red"
+//   // let cartItems = document.getElementById('cart-items')
+//   // let allItems = document.getElementById('allItems')      
+//   // let newDiv = document.getElementById('newDiv')
+//   // cartItems.removeChild(allItems)   
+//         })
+// })
+
 </script>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>

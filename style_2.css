@@ -8,7 +8,8 @@
 
 body {
     font-family: 'Montserrat', sans-serif;
-    background: #eaeded!important;
+    /* background: #eaeded!important; */
+    background-image: url('./img/photo-1497942304796-b8bc2cc898f3.jpg');
 }
 
 h6 {
@@ -25,7 +26,7 @@ h6 {
 }
 
 .echange {
-    background: url('./img/img_cam_3.jpg');
+    background: url('./img/img_cam_3.jpg') cover;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: left;
