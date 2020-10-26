@@ -8,13 +8,8 @@
 
 body {
     font-family: 'Lobster', cursive!important;
-    background-image: url('./img/photo-1497942304796-b8bc2cc898f3.jpg');
+    background-image: url('../img/photo-1497942304796-b8bc2cc898f3.jpg');
 }
-
-h6 {
-    color: black;
-}
-
 
 /* Header / footer */
 

@@ -1,0 +1,35 @@
+/* Carte produit */
+.card {
+    width: 520px;
+    margin: auto;
+    font-family: 'Lobster', cursive!important;
+  }
+  
+  .card-title {
+    margin: auto;
+    font-size: 2.5rem;
+    font-family: 'Lobster', cursive!important;
+  }
+  
+  .img_produit {
+      width: 518px;
+      height: 342px;
+  }
+  
+  .inputQTY {
+    margin: 15px;
+  }
+  
+  select {
+    margin: 10px 15px;
+  }
+  
+  .card-text {
+    font-size: 1.2rem;
+    margin: 15px;
+    font-family: 'Lobster', cursive!important;
+  }
+  
+#ajoutPanier {
+    margin: 15px;
+  }
