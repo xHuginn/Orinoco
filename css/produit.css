@@ -19,6 +19,10 @@
   .inputQTY {
     margin: 15px;
   }
+
+  #selectQTY {
+    width: 45px;
+}
   
   select {
     margin: 10px 15px;

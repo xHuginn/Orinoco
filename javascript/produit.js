@@ -23,11 +23,11 @@ fetch(`http://localhost:3000/api/cameras/${id}`)
                     <div class="inputQTY">
                         <label for="selectQTY">Quantité :</label>
                         <input type="number" id="selectQTY" name="selectQTY"
-                        min="1" max="30">
+                        min="1" max="30" value="1">
                     </div>
 
                     <select id="select" name="lentille">
-                        <option id="selected" selected disabled >Lentilles :</option>
+                        <option id="selected" class="disabled" selected disabled value="0">Lentilles :</option>
                     </select>
                     </div>
 
@@ -51,24 +51,20 @@ fetch(`http://localhost:3000/api/cameras/${id}`)
 
         let selectQTY = document.getElementById('selectQTY')
 
-        
         const selectBTN = document.querySelector('#select')
         let btnAjoutPanier = document.getElementById('ajoutPanier')
         btnAjoutPanier.addEventListener('click', AjoutPanier => {
-            // let selected = document.getElementById('selected')
-            // if(selected == "Lentilles :") {
-            //     alert('Choisissez une lentille !')
-            // } else {
-            //     console.log('ok');
-            // }
-
-            sessionStorage.setItem('id', id)
-            let selectBTNValue = document.querySelector('#select').value
             let qtyElement = document.querySelector('input#selectQTY').value
-            sessionStorage.setItem('selected', selectBTNValue)
-            sessionStorage.setItem('qty', qtyElement)
-
-
-            document.location.href=`./panier.html`
+            let selectBTNValue = document.querySelector('#select').value
+            console.log(selectBTNValue);
+            if(selectBTNValue == 0) {
+                alert('Choisissez une lentille !')
+            } else {
+                console.log('ok');
+                sessionStorage.setItem('id', id)
+                sessionStorage.setItem('selected', selectBTNValue)
+                sessionStorage.setItem('qty', qtyElement)
+                document.location.href=`./panier.html`
+            }
         })
 })
