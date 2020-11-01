@@ -1,0 +1,268 @@
+/* 
+///////////////////////
+///////////////////////
+///////////////////////
+///////////////////////
+        INDEX 
+///////////////////////
+///////////////////////
+///////////////////////
+///////////////////////
+*/
+
+/* Carousel */
+
+.carousel {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+  }
+
+  .slide {
+    margin-bottom: 55px;
+    border: 2px black solid;
+    width: 555px;
+    height: 346px;
+  }
+  
+
+/* Carte caméras */
+.all-card {
+  background: rgba(255, 255, 255, 0.8);
+  padding-bottom: 25px;
+  }
+
+.offers {
+    font-size: 2.2rem;
+    text-align: center;
+    padding-top: 25px;
+  }
+
+.content {
+    display: flex;
+    flex-flow: row wrap;
+  }
+
+.card {
+  margin: 25px;
+  border: 2px solid rgba(0, 0, 0, 0.7);
+  width: 20%;
+  border-radius: 3px;
+  box-shadow: 2px 5px 15px 2px rgba(0,0,0,0.46);
+}
+
+.card-title {
+  font-size: 1.8rem;
+  margin: auto;
+  padding: 10px;
+  text-align: center;
+}
+
+.card-img {
+  min-height: 180px;
+  max-height: 300px;
+  height: auto;
+  min-width: 50px;
+  max-width: 652px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.card-body {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-text {
+    font-size: 1.3rem;
+    margin: 12px;
+  }
+
+input {
+  font-family: 'Lobster', cursive;
+  padding: 12px;
+  border-radius: 5px;
+  border: 1px solid #6c757d;
+  margin: 18px;
+  font-size: 1.1rem;
+}
+
+input:hover {
+  cursor: pointer;
+  background: #6c757d;
+  color: azure;
+}
+
+
+
+
+
+/*
+ //////////////////////////////
+ //////////////////////////////
+ //////////////////////////////
+ //////////////////////////////
+  Mobile 
+ //////////////////////////////
+ //////////////////////////////
+ //////////////////////////////
+ //////////////////////////////
+ */
+@media screen and (min-width: 320px) and (max-width: 425px) {
+
+/* Carousel */
+
+.carousel {
+  display: none;
+}
+
+/* Carte caméras */
+
+.card {
+  width: 90%;
+  }
+  
+  .card-text {
+    font-size: 1.6rem;
+  }
+  
+
+}
+
+
+/* 
+ //////////////////////////////
+ //////////////////////////////
+ //////////////////////////////
+ //////////////////////////////
+ Tablette
+ //////////////////////////////
+ //////////////////////////////
+ //////////////////////////////
+ //////////////////////////////
+ */
+@media screen and (min-width: 426px) and (max-width: 768px) {
+
+
+/* Carousel */
+
+.slide {
+  width: 400px;
+  height: 346px;
+}
+
+
+/* Carte caméras */
+
+.card {
+width: 90%;
+}
+
+.card-text {
+  font-size: 1.6rem;
+}
+
+}
+
+/* 
+ //////////////////////////////
+ //////////////////////////////
+ //////////////////////////////
+ //////////////////////////////
+ Desktop
+ //////////////////////////////
+ //////////////////////////////
+ //////////////////////////////
+ //////////////////////////////
+*/
+@media screen and (min-width: 769px) and (max-width: 1439px) {
+
+
+/* Carousel */
+
+.slide {
+    margin-bottom: 55px;
+    border: 2px black solid;
+    width: 700px;
+    height: 450px;
+  }
+
+
+/* Carte caméras */
+  .offers {
+    font-size: 2.8rem;
+  }
+
+  .content {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+  }
+
+  .card {
+  width: 35%;
+  }
+
+  .card-text {
+    margin: 20px;
+  }
+
+  input {
+  font-size: 1rem;
+  }
+
+}
+
+/*
+//////////////////////////////
+//////////////////////////////
+//////////////////////////////
+//////////////////////////////
+//////////////////////////////
+ Desktop 4k
+ //////////////////////////////
+ //////////////////////////////
+ //////////////////////////////
+ //////////////////////////////
+*/
+@media screen and (min-width: 1440px) {
+
+
+/* Carousel */
+
+  .slide {
+    width: 800px;
+    height: 550px;
+  }
+
+
+/* Carte caméras */
+
+  .offers {
+    font-size: 3.5rem;
+  }
+
+  .content {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+  }
+
+  .card {
+  margin: 50px;
+  }
+
+  .card-title {
+  font-size: 2rem;
+  }
+
+  .card-text {
+    font-size: 1.5rem;
+    margin: 18px;
+  }
+
+  input {
+  font-size: 1.5rem;
+  }
+
+}

@@ -1,0 +1,170 @@
+/* RESET */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Lobster', cursive;
+    background-image: url('../img/photo-1497942304796-b8bc2cc898f3.jpg');
+}
+
+/* Header / footer */
+
+.navbar, footer {
+    background: #b7b7be;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.logo {
+    margin: 15px 0;
+}
+
+.navbar {
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #000;
+    margin-bottom: 10px;
+}
+
+.navbar-list {
+    display: flex;
+    margin: 25px;
+}
+  
+ul li {
+    margin: 15px;
+    list-style-type: none;
+}
+
+a {
+    color: #de2c0e;
+    text-decoration: none;
+}
+a:hover {
+    color: #000;
+  }
+
+
+footer {
+    flex-shrink: 0;
+    border-top: 1px solid #000;
+    width: 100%;
+    color: #221a20;
+}
+
+.page-footer {
+    display: flex;
+}
+
+.footer__description,
+.footer__other,
+.footer__link, 
+.footer__contact {
+    margin: 15px;
+}
+
+.footer--title {
+    font-size: 1.25rem;
+    margin-bottom: 8px;
+}
+.footer__description {
+    width: 30%;
+}
+.footer__other {
+
+}
+.footer__link {
+
+}
+.footer__contact {
+
+}
+.footer__contact--paragraph {
+margin: 5px;
+}
+
+.copyright {
+    text-align: center;
+    padding-bottom: 25px;
+}
+    
+    /* 
+     //////////////////////////////
+     //////////////////////////////
+     //////////////////////////////
+     //////////////////////////////
+            Mobile & Tablette
+     //////////////////////////////
+     //////////////////////////////
+     //////////////////////////////
+     //////////////////////////////
+     */
+    @media screen and (min-width: 320px) and (max-width: 768px) {
+
+        .logo {
+
+        }
+        
+        .navbar {
+            height: 150px;
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid #000;
+            margin-bottom: 10px;
+        }
+        
+        .navbar-list {
+            display: flex;
+            flex-direction: column;
+            margin: 15px 25px;
+        }
+          
+        ul li {
+            margin: 10px;
+            list-style-type: none;
+        }
+        
+        a {
+            color: #de2c0e;
+            text-decoration: none;
+        }
+
+
+        .page-footer {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.footer__description,
+.footer__other,
+.footer__link, 
+.footer__contact {
+    width: 90%;
+}
+
+
+    
+    }
+    
+    /* 
+     //////////////////////////////
+     //////////////////////////////
+     //////////////////////////////
+     //////////////////////////////
+                Desktop
+     //////////////////////////////
+     //////////////////////////////
+     //////////////////////////////
+     //////////////////////////////
+    */
+    @media screen and (min-width: 769px) {
+    .page-footer {
+        justify-content: center;
+    }
+    
+}
