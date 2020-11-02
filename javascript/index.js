@@ -44,32 +44,25 @@ fetch("http://localhost:3000/api/cameras")
 
 function cardParameter(txt, url, price, id) {
     let content = document.getElementById('content');
-    content.setAttribute('class', 'row')
-
-    let grille = document.createElement('div')
-    grille.setAttribute('class', 'col-md-4 col-sm-6')
-
-    content.appendChild(grille);
+    content.setAttribute('class', 'content')
 
     let divCard = document.createElement('div');
-    divCard.setAttribute('class', 'card mb-4 shadow-sm')
+    divCard.setAttribute('class', 'card')
 
-    grille.appendChild(divCard);
+    content.appendChild(divCard);
 
-    Name(divCard, txt);
-    Image(divCard, url);
+    name(divCard, txt);
+    image(divCard, url);
 
     let cardBody = document.createElement('div')
     cardBody.setAttribute('class', 'card-body')
     divCard.appendChild(cardBody)
 
-    let divBody = document.createElement('div');
-    divBody.setAttribute('class', 'card ')
-    Description(cardBody, price);
-    Link(cardBody, txt, id);
+    Price(cardBody, price);
+    link(cardBody, txt, id);
 }
 // fonction appelle du nom
-function Name(card, txt) {
+function name(card, txt) {
     let cardTitleCreate = document.createElement('h5')
     let newcardTitleCreate = document.createTextNode(txt);
     cardTitleCreate.setAttribute('class', 'card-title') 
@@ -78,16 +71,16 @@ function Name(card, txt) {
 }
 
 // fonction appelle de l'img
-function Image(card, url) {
+function image(card, url) {
     let imgCard = document.createElement('img')
-    imgCard.setAttribute('class', 'imgID w-100')
+    imgCard.setAttribute('class', 'card-img')
     // indique que la src est l'url de l'Img
     imgCard.src = url
     card.appendChild(imgCard)
 }
 
 // fonction appelle du prix
-function Description(card, price) {
+function Price(card, price) {
       let cardTextCreate = document.createElement('p')
     let newcardTextCreate = document.createTextNode(`${price/100} €`); 
     cardTextCreate.setAttribute('class', 'card-text')
@@ -95,7 +88,7 @@ function Description(card, price) {
     cardTextCreate.appendChild(newcardTextCreate)
 }
 // fonction appelle du lien
-function Link(card, name, id) {
+function link(card, name, id) {
     let form = document.createElement('form')
     let link = document.createElement('input')
     link.type="button"
@@ -105,7 +98,7 @@ function Link(card, name, id) {
         sessionStorage.setItem('name', name)   
         // met l'id en sessionStorage ?  
         sessionStorage.setItem('id', id)
-        document.location.href=`./produit.html`
+        document.location.href=`../html/produit.html`
         }) 
     card.appendChild(form);
     form.appendChild(link);

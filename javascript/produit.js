@@ -14,8 +14,7 @@ fetch(`http://localhost:3000/api/cameras/${id}`)
 .then( camera => {
   let card =
 //   HTML de la card
-        `<div class="col mb-4">
-            <div class="card">
+        `<div class="card">
                 <h5 id="name" class="card-title">${camera.name}</h5>
                     <img id="imageUrl" src="${camera.imageUrl}" class="img_produit" alt="${camera.name}">
 
@@ -28,17 +27,17 @@ fetch(`http://localhost:3000/api/cameras/${id}`)
 
                     <select id="select" name="lentille">
                     <option id="selected" class="disabled" selected disabled value="">Lentilles :</option>
-                        
                     </select>
                     </div>
 
+                    <div class="infos">
                         <div class="details">
                             <p id="description" class="card-text">${camera.description}</p>
                             <p id="price" class="card-text">${camera.price / 100}€</p>
-                            <button type="button" id="ajoutPanier" class="btn btn-outline-success">Ajouter au panier</button>
                         </div>
-            </div>
-         </div>`;
+                            <button type="button" id="ajoutPanier" class="btn btn-outline-success">Ajouter au panier</button>
+                    </div>    
+            </div>`;
         //  
         //  <option id="newSelected"></option>
         content.innerHTML += card;
@@ -307,7 +306,7 @@ fetch(`http://localhost:3000/api/cameras/${id}`)
 //                 ajArticleAuPanier()
 //                 console.log('ok');
 //                 console.log(selectBTNValue);
-//                 // document.location.href=`./panier.html`
+//                 // document.location.href=`#`
                 
                 
                 
