@@ -1,0 +1,211 @@
+/* Carte produit */
+.card {
+    width: 800px;
+    margin: auto;
+    background: rgba(255, 255, 255, 0.7);
+  }
+  
+  .card-title {
+    text-align: center;
+    font-size: 2.5rem;
+    padding-top: 15px;
+  }
+  
+  .img_produit {
+      width: 500px;
+      max-height: 450px;
+      height: auto;
+      width: 100%;
+      margin: 16px auto;
+  }
+
+  .card-body {
+    display: flex;
+    justify-content: space-around;
+    font-size: 1.5rem;
+  }
+  
+  .inputQTY {
+    margin: 10px;
+  }
+/* Quantité caméra */
+  #selectQTY {
+    width: 45px;
+    height: 20px;
+    padding: 14px 0;
+    font-size: 1.2rem;
+}
+/* Lentille */
+  select {
+    margin: 10px 15px;
+    font-size: 1rem;
+  }
+  
+  .card-text {
+    font-size: 1.2rem;
+    margin: 15px;
+  }
+
+  .infos {
+      padding-bottom: 25px;
+  }
+
+  .infos, .details {
+      display: flex;
+  }
+
+  .details {
+      flex-direction: column;
+      margin-left: 25px;
+  }
+
+  #description {
+    text-align: justify;
+    width: 40%;
+  }
+
+  #price {
+    width: 40%;
+    text-align: right;
+  }
+  
+#ajoutPanier {
+    font-family: 'Lobster', cursive;
+    height: 65px;
+    margin: 15px;
+    margin-top: 85px;
+    margin-right: 85px;
+    padding: 15px;
+    background: #d86d16;
+    color: #fff;
+    border: 1px solid #b41e13;
+    border-radius: 4px;
+
+  }
+
+#ajoutPanier:hover {
+    background: #49e62d;
+    color: black;
+    cursor: pointer;
+}
+
+  /* 
+     //////////////////////////////
+     //////////////////////////////
+     //////////////////////////////
+     //////////////////////////////
+                Mobile 
+     //////////////////////////////
+     //////////////////////////////
+     //////////////////////////////
+     //////////////////////////////
+     */
+
+  @media screen and (min-width: 320px) and (max-width: 425px) {
+
+   /* Carte produit */
+   .card {
+    width: 320px;
+  }
+  
+.card-body {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .infos, .details {
+      flex-direction: column;
+  }
+
+  #description {
+    width: 80%;
+  }
+
+  #price {
+    margin: auto;
+    width: 80%;
+    text-align: center;
+  }
+  
+#ajoutPanier {
+    margin: auto;
+    margin-top: 35px;
+  }  
+    
+    }
+    
+    
+    /* 
+     //////////////////////////////
+     //////////////////////////////
+     //////////////////////////////
+     //////////////////////////////
+                Tablette
+     //////////////////////////////
+     //////////////////////////////
+     //////////////////////////////
+     //////////////////////////////
+     */
+    @media screen and (min-width: 426px) and (max-width: 768px) {
+    
+    /* Carte produit */
+.card {
+    width: 400px;
+  }
+  
+.card-body {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .infos, .details {
+      flex-direction: column;
+  }
+
+  .details {
+      flex-direction: row;
+      margin-left: 25px;
+  }
+
+  #description {
+    text-align: justify;
+    width: 60%;
+  }
+
+  #price {
+    margin: auto;
+    width: 30%;
+    text-align: center;
+  }
+  
+#ajoutPanier {
+    margin: auto;
+    margin-top: 35px;
+  }
+}
+    
+    /* 
+     //////////////////////////////
+     //////////////////////////////
+     //////////////////////////////
+     //////////////////////////////
+                Desktop
+     //////////////////////////////
+     //////////////////////////////
+     //////////////////////////////
+     //////////////////////////////
+    */
+    @media screen and (min-width: 769px) and (max-width: 1439px) {
+    
+        /* Carte produit */
+.card {
+    width: 700px;
+  }
+  
+#ajoutPanier {
+    width: 150px;
+    height: 75px;
+    margin-right: 65px;
+  }
+  
+}

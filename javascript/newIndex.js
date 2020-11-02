@@ -98,7 +98,7 @@ function link(card, name, id) {
         sessionStorage.setItem('name', name)   
         // met l'id en sessionStorage ?  
         sessionStorage.setItem('id', id)
-        document.location.href=`./produit.html`
+        document.location.href=`../html/newProduit.html`
         }) 
     card.appendChild(form);
     form.appendChild(link);
