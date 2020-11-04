@@ -3,9 +3,9 @@
 let i = 0;
 // Tableau des imgs du carousel
 let img = [
-    '../img/cam_3.png',
-    '../img/img_cam_2.jpg',
-    '../img/banniere.png'
+    './img/cam_3.png',
+    './img/img_cam_2.jpg',
+    './img/banniere.png'
 ];
 // Temps où on voit l'img
 let time = 4000;
@@ -27,19 +27,19 @@ function changeImg() {
 // active au chargement de l'img
 window.onload = changeImg;
 
-// appelle de l'API
-fetch("http://localhost:3000/api/cameras")
-.then(response => response.json())
-.then(cameras => card(cameras))
-    
 
-// Fonction paramètres des cartes
-// function appel () {
-//     let response = getCameras()
-//     let data = JSON.stringify(response)
-//     console.log(data);
-// }
-// appel()
+
+async function getAPI () {
+    try {
+      const cameras = await getCameras()
+      console.log(cameras);
+      card(cameras) 
+    } catch (e) {
+      console.log(e);
+    }
+   
+  }
+  getAPI()
 
 
 function cardParameter(txt, url, price, id) {
@@ -98,7 +98,7 @@ function link(card, name, id) {
         sessionStorage.setItem('name', name)   
         // met l'id en sessionStorage ?  
         sessionStorage.setItem('id', id)
-        document.location.href=`../html/produit.html`
+        document.location.href=`./produit.html`
         }) 
     card.appendChild(form);
     form.appendChild(link);
