@@ -6,15 +6,16 @@ async function getAPIWithID () {
     const camera = await getProduit(id)
     console.log(camera);
     cardCamera(camera)
-    // sauvegarderPanier()
-    // chargerPanier()
+    BtnAjPanier()
+    sauvegarderPanier()
+    chargerPanier()
     
   } catch (e) {
     console.log(e);
   }
 }
 getAPIWithID()
-
+const id = "panier"
 let panier = chargerPanier()
 
 function cardCamera (camera) {
@@ -60,11 +61,11 @@ function cardCamera (camera) {
 
 // id
 function chargerPanier() {
-  const cart = localStorage.getItem(id)
-  if (cart === null) {
+  const panier = localStorage.getItem(id)
+  if (panier === null) {
       return []
   } 
-  return JSON.parse(cart)
+  return JSON.parse(panier)
 }
 
   function ajArticleAuPanier () {
@@ -91,37 +92,37 @@ function chargerPanier() {
       nombreDeCameras : nombreDeCameras,
       lentilleChoisie : lentilleChoisie
     }
-    let ArtciclePresent = false
+    // let ArtciclePresent = false
 
-    for(let [indexCamera, camera] of panier.entries()) {
+    // for(let [indexCamera, camera] of panier.entries()) {
       
-      if(article.id === camera.id && article.lentilleChoisie === camera.lentilleChoisie) {
-        console.log(article.id);
-        console.log('+1');
-        panier[indexCamera].nombreDeCameras += article.nombreDeCameras
-        ArtciclePresent = true
-      } 
+    //   if(article.id === camera.id && article.lentilleChoisie === camera.lentilleChoisie) {
+    //     console.log(article.id);
+    //     console.log('+1');
+    //     panier[indexCamera].nombreDeCameras += article.nombreDeCameras
+    //     ArtciclePresent = true
+    //   } 
       
-      if(ArtciclePresent == false) {
-        console.log('+1 cam');
-        panier.push(article)
-      }
-      sauvegarderPanier(panier)
-    }
+    //   if(ArtciclePresent == false) {
+    //     console.log('+1 cam');
+    //     panier.push(article)
+    //   }
+    //   sauvegarderPanier(panier)
+    // }
      
     // console.log(article);
 
-    // if(article.name === name && article.nombreDeCameras === nombreDeCameras) {
-    //   console.log('+1');
-    //   article.nombreDeCameras += nombreDeCameras
-    //   panier.pop()
-    //   panier.push(article)
-    //   sauvegarderPanier(panier)
-    // } else {
-    //   console.log('--');
-    //   panier.push(article)
-    //   sauvegarderPanier(panier)
-    // }
+    if(article.name === name && article.nombreDeCameras === nombreDeCameras) {
+      console.log('+1');
+      article.nombreDeCameras += nombreDeCameras
+      panier.pop()
+      panier.push(article)
+      sauvegarderPanier(panier)
+    } else {
+      console.log('--');
+      panier.push(article)
+      sauvegarderPanier(panier)
+    }
 
 
 
@@ -131,9 +132,9 @@ function chargerPanier() {
   }
 
   // id, panier
-function sauvegarderPanier(panier) {
-  sessionStorage.setItem(id, JSON.stringify(panier))
-}
+  function sauvegarderPanier(panier) {
+    sessionStorage.setItem(id, JSON.stringify(panier))
+  }
 
 
 function BtnAjPanier () {
