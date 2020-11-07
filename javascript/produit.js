@@ -1,8 +1,7 @@
 
-
 async function getAPIWithID () {
   try {
-    let id = sessionStorage.getItem("id")
+    let id = localStorage.getItem("id")
     const camera = await getProduit(id)
     console.log(camera);
     cardCamera(camera)
@@ -59,6 +58,14 @@ function cardCamera (camera) {
         }     
       }
 
+      function BtnAjPanier () {
+        const selectBTN = document.querySelector('#select')
+                let btnAjoutPanier = document.getElementById('ajoutPanier')
+                btnAjoutPanier.addEventListener('click', AjoutPanier => {
+                    ajArticleAuPanier()
+                })
+      }
+      
 // id
 function chargerPanier() {
   const panier = localStorage.getItem(id)
@@ -68,22 +75,17 @@ function chargerPanier() {
   return JSON.parse(panier)
 }
 
-  function ajArticleAuPanier () {
-    let id = sessionStorage.getItem("id")
-    console.log(id);
+ 
+  function ajArticleAuPanier() {
+
+    let id = localStorage.getItem("id")
     let imageUrl = document.getElementById('imageUrl').src
-    console.log(imageUrl);
     let name = document.getElementById('name').textContent
-    console.log(name);
     let price = document.getElementById('price').textContent
-    console.log(price);
     let nombreDeCameras = Number(document.querySelector('input#selectQTY').value)
-    console.log(nombreDeCameras);
     let lentilleChoisie = document.getElementById('select').value
-    console.log(lentilleChoisie);
 
 
-    
     let article = {
       id: id,
       imageUrl : imageUrl,
@@ -92,55 +94,26 @@ function chargerPanier() {
       nombreDeCameras : nombreDeCameras,
       lentilleChoisie : lentilleChoisie
     }
-    // let ArtciclePresent = false
 
-    // for(let [indexCamera, camera] of panier.entries()) {
-      
-    //   if(article.id === camera.id && article.lentilleChoisie === camera.lentilleChoisie) {
-    //     console.log(article.id);
-    //     console.log('+1');
-    //     panier[indexCamera].nombreDeCameras += article.nombreDeCameras
-    //     ArtciclePresent = true
-    //   } 
-      
-    //   if(ArtciclePresent == false) {
-    //     console.log('+1 cam');
-    //     panier.push(article)
-    //   }
-    //   sauvegarderPanier(panier)
-    // }
-     
-    // console.log(article);
+    let ArtciclePresent = false
 
-    if(article.name === name && article.nombreDeCameras === nombreDeCameras) {
-      console.log('+1');
-      article.nombreDeCameras += nombreDeCameras
-      panier.pop()
-      panier.push(article)
-      sauvegarderPanier(panier)
-    } else {
-      console.log('--');
-      panier.push(article)
-      sauvegarderPanier(panier)
-    }
-
-
-
-  // panier.push(article)
-
-
-  }
-
-  // id, panier
-  function sauvegarderPanier(panier) {
-    sessionStorage.setItem(id, JSON.stringify(panier))
-  }
-
-
-function BtnAjPanier () {
-  const selectBTN = document.querySelector('#select')
-          let btnAjoutPanier = document.getElementById('ajoutPanier')
-          btnAjoutPanier.addEventListener('click', AjoutPanier => {
-              ajArticleAuPanier()
-          })
+       for (let [indexCamera, camera] of panier.entries()) {
+      if (article.id === camera.id && article.lentilleChoisie === camera.lentilleChoisie) {
+        panier[indexCamera].nombreDeCameras += article.nombreDeCameras
+          console.log('+1')
+          ArtciclePresent = true
+      }
+    } 
+      if (ArtciclePresent == false) {
+          panier.push(article)
+          console.log('+1 article')
+      }
+    sauvegarderPanier(panier)
 }
+
+
+function sauvegarderPanier(panier) {
+  localStorage.setItem(id, JSON.stringify(panier))
+  }
+
+

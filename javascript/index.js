@@ -95,9 +95,9 @@ function link(card, name, id) {
     link.value="Découvrir"
     link.addEventListener('click', ll => {
         // met le nom en sessionStorage ?
-        sessionStorage.setItem('name', name)   
+        localStorage.setItem('name', name)   
         // met l'id en sessionStorage ?  
-        sessionStorage.setItem('id', id)
+        localStorage.setItem('id', id)
         document.location.href=`./produit.html`
         }) 
     card.appendChild(form);
