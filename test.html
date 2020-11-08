@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+let panier = localStorage.getItem('panier')
+      console.log(JSON.parse(panier));
+      function test(nombre){
+        let ul = document.createElement('ul');
+        Object.keys(nombre).forEach(function (key) {
+          let li = document.createElement('li');
+          let contenuDeLObjet = nombre[key];
+        //   console.log(contenuDeLObjet);
+              li.textContent = key + ' : ' + contenuDeLObjet;
+            //   console.log(key);
+              ul.appendChild(li);
+        });
+          document.querySelector('body').appendChild(ul);
+      }
+      
+      function list (list) {
+        for (let i = 0; i < list.length; i++) {
+            test(list[i]);
+        }
+      }
+      
+      list(JSON.parse(panier));
+      
+      function total () {
+        let total = 0
+
+      }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // let panier = localStorage.getItem('panier')
+    //   console.log(JSON.parse(panier));
+    //   function test(objetDuPanier){
+    //     let ul = document.createElement('ul');
+    //     Object.keys(objetDuPanier).forEach(function (key) {
+    //       let li = document.createElement('li');
+    //       let contenuDeLObjet = objetDuPanier[key];
+    //     //   console.log(contenuDeLObjet);
+    //           li.textContent = key + ' : ' + contenuDeLObjet;
+    //         //   console.log(key);
+    //           ul.appendChild(li);
+    //     });
+    //       document.querySelector('body').appendChild(ul);
+    //   }
+      
+    //   function list (list) {
+    //     for (let i = 0; i < list.length; i++) {
+    //         test(list[i]);
+    //     }
+    //   }
+      
+    //   list(JSON.parse(panier));
+      
+    //   function total () {
+    //     let total = 0
+
+    //   }
+      
+      </script>
+</body>
+</html>

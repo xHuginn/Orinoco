@@ -133,9 +133,15 @@ let ArtciclePresent = false
 function total () {
   let total = 0
 
+  let number = localStorage.getItem('panier')
+
+  console.log(number);
+  
+
+  
+  console.log(total);
 }
 total()
-
 // console.log(JSON.parse(localStorage.getItem('itemsArray')));
 // addItem();
 // addItem('name1', 'image1', 'price1');
