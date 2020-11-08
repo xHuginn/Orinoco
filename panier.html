@@ -2,133 +2,178 @@
 <html lang="fr">
 
 <head>
-  <!-- Required meta tags -->
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
-  <link rel="stylesheet" href="./css/style.css">
-  <link rel="stylesheet" href="./css/panier.css">
   <link href="https://fonts.googleapis.com/css2?family=Anton&family=Grenze+Gotisch:wght@600;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-  integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
-  crossorigin="anonymous">
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="css/panier.css">
+  <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
 
-  <title>Orinoco | Prototype</title>
+  <title>Orinoco | Accueil</title>
 </head>
+<style>
 
+</style>
 <body>
+  <!--Navbar-->
+<nav class="navbar">
 
-<nav class="navbar navbar-expand-lg navbar-dark primary-color">
-
-  <a class="navbar-brand" href="index.html">
-    <img src="./img/logo.svg" width="65" height="65" alt="Logo" />
-    <img src="./img/dessin.svg" width="65" height="65" alt="Orinoco"/>
+  <a class="" href="./index.html">
+    <img class="logo" src="./img/logo.svg" width="65" height="65" alt="Logo" />
+    <img class="logo" src="./img/dessin.svg" width="65" height="65" alt="Orinoco"/>
   </a>
 
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
-    aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button> 
 
-  <div class="collapse navbar-collapse" id="basicExampleNav">
+  <div class="" id="">
 
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Acceuil
-          <span class="sr-only">(current)</span>
-        </a>
+    <ul class="navbar-list">
+      <li class="">
+        <a class="" href="./index.html">Acceuil</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="produit.html">Service</a>
+      <li class="">
+        <a class="" href="./index.html">Service</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Contact</a>
+      <li class="">
+        <a class="" href="./index.html">Contact</a>
       </li>
     </ul>
-
-    <form class="form-inline">
-      <div class="md-form my-0">
-        <input class="form-control mr-sm-2" type="text" placeholder="Rechercher..." aria-label="Search">
-      </div>
-    </form>
   </div>
+
 </nav>
+<!--/Navbar-->
 
-<section class="main-content" id="main-content">
-  <!-- Carte avec article -->
-    <div id="content"></div>
 
-  <!-- Montant de la commande -->
-    <div class="total" id="total">
-      <h3>Montant total</h3>
+<!-- Contenu page -->
 
-      <div class="details--cart">
-        <p>Montant hors taxe</p>
-        <p>Livraison gratuite</p>
+<!-- Récap commande -->
+
+<section class="recap">
+
+  <table class="recap--commande">
+
+    <thead>
+      <tr>
+        <th colspan="6">Votre panier :</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr>
+        <td colspan="2" id="picAndName">photo + nom</td>
+        <td id="lense">lense</td>
+        <td id="price">price</td>
+        <td id="quantity">quantity</td>
+        <td id="total">total</td>
+      </tr>
+    </tbody>
+
+    </table>
+
+
+
+
+<!-- Formulaire -->
+
+
+  <fieldset class="recap--form">
+    <legend>
+        <h3>Pour finaliser votre commande...</h3>
+        <p><small>Les * sont obligatoires</small></p>
+    </legend>
+<form method="post">
+    <label for="nom">Nom <sup>*</sup></label>
+    <input type="text" for="nom" name="nom" id="nom" placeholder="Jean" required/>
+    
+    <label for="prenom">Prenom <sup>*</sup></label>
+    <input type="text" for="prenom" name="prenom" id="prenom" placeholder="Dupont" required/>
+  <br>
+    <label for="mail">Email <sup>*</sup></label>
+    <input type="text" for="mail" name="mail" id="mail" placeholder="votremail@mail.fr" required/>
+
+    <label for="adresse">Adresse <sup>*</sup></label>
+    <input type="text" for="adresse" name="adresse" id="adresse" placeholder="3 rue de la madeleine" required />
+    <br>
+    <label for="codePostal">Code postal <sup>*</sup></label>
+    <input type="number" for="codePostal" name="codePostal" id="codePostal" placeholder="75000" required />
+
+    <label for="ville">Ville <sup>*</sup></label>
+    <input type="text" for="ville" name="ville" id="ville" placeholder="Paris" required />
+    <br>
+    <button type="submit" id="button_1">Envoyer votre réservation</button>
+</form>
+</fieldset>
+
+</section>
+<!-- /Contenu page -->
+
+<!-- Footer -->
+
+<footer class="">
+
+  <div class="page-footer">
+      <div class="footer__description">
+        <h6 class="footer--title">Orinoco</h6>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, perspiciatis expedita. Corrupti modi ipsam excepturi repellat nobis necessitatibus, odit ex explicabo, quidem quibusdam beatae veritatis.</p>
       </div>
 
-    <div class="totalTTC">
-      <p>Montant TTC</p>
-    </div>
+      <div class="footer__other">
+        <h6 class="footer--title">Nos sites</h6>
+        <p>
+          <a href="#!">Orinoco play</a>
+        </p>
+        <p>
+          <a href="#!">Orinoco food</a>
+        </p>
+        <p>
+          <a href="#!">Orinoco book</a>
+        </p>
+        <p>
+          <a href="#!">Orinoco furniture</a>
+        </p>
 
-    <form>
-      <input id="btn-commande" type="button" value="Passer la commande">
-    </form>
-    </div>
-</section>
+      </div>
 
+      <div class="footer__link">
+        <h6 class="footer--title">Liens utiles</h6>
+        <p>
+          <a href="#!">Votre compte</a>
+        </p>
+        <p>
+          <a href="#!">Mieux nous connaître</a>
+        </p>
+        <p>
+          <a href="#!">Vendez sur Orinoco</a>
+        </p>
+        <p>
+          <a href="#!">Aide</a>
+        </p>
+      </div>
 
-<!-- <div class="col mb-4">
-            <div class="card">
-                <h5 class="card-title">Nom</h5>
-                    <img src="" class="card-img-top" alt="image">
-
-                    <div class="card-body">
-                    <div class="roo">
-                        <label for="selectQTY">Quantité :</label>
-                        <input type="number" id="selectQTY" name="selectQTY"
-                        min="1" max="30">
-                    </div>
-
-                    <select id="select" name="lentille">
-                        <option selected disabled >Lentilles :</option>
-                    </select>
-                    </div>
-
-                        <div class="details">
-                            <p class="card-text">description</p>
-                            <p class="card-text">Prix :</p>
-                            <button type="button" id="ajoutPanier" class="btn btn-outline-success">Ajouter au panier</button>
-                        </div>
-            </div>
-         </div> -->
-
-<!-- 
-<section class="container content-section">
-  <h2 class="section-header">Votre panier :</h2>
-  <div class="cart-row">
-      <span id="cam" class="cart-item cart-header cart-column">Caméra</span>
-      <span id="lense" class="cart-lenses cart-header cart-column">Lentille</span>
-      <span id="price" class="cart-price cart-header cart-column">Prix</span>
-      <span id="qty" class="cart-quantity cart-header cart-column">Quantité</span>  
+      <div class="footer__contact">
+        <h6 class="footer--title">Contact</h6>
+        <p class="footer__contact--paragraph">Paris, 75000, France</p>
+        <p class="footer__contact--paragraph">supportclient@orinoco.com</p>
+        <p class="footer__contact--paragraph">05 11 50 78 52</p>
+        <p class="footer__contact--paragraph">05 11 50 78 52</p>
+      </div>
   </div>
-  <div id="cart-items" class="cart-items">
-  </div>
-  <div class="cart-total">
-      <strong class="cart-total-title">Total</strong>
-      <span class="cart-total-price">0€</span>
-  </div>
-  <button class="btn btn-success btn-purchase" type="button">Valider la commande</button>
-</section> -->
 
-<script>
+  <!-- Copyright -->
 
-</script>
-<script src="../javascript/request.js"></script>
-<script src="../javascript/panier.js"></script>
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-  </body>
-  </html>
+  <div class="copyright">© 2020 Copyright:
+    <a href="./index.html"> Orinoco.com</a>
+  </div>
+
+  <!-- Copyright -->
+
+</footer>
+
+<!-- /Footer -->
+
+
+<!-- <script src="./javascript/request.js"></script>
+<script src="./javascript/panier.js"></script> -->
+
+ </body>
+</html>

@@ -1,0 +1,97 @@
+/* Panier */
+
+
+.recap {
+    height: 500px;
+    background-color: rgba(255, 255, 255, 0.7);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 80%;
+    margin: auto;
+    margin-bottom: 35px;
+  }
+  
+   .recap--commande {
+    background-color: #C4C4C4;
+    width: 80%;
+    max-width: 1350px;
+    text-align: center;
+    margin: auto;
+  }
+  .recap--commande td, .recap--commande th {
+    border-bottom: 2px solid #000;
+    padding: 10px 10px;
+  }
+  .recap--commande tbody td {
+    font-size: 14px;
+  }
+  .recap--commande tr:nth-child(even) {
+    background: #ece6e6;
+  }
+  .recap--commande thead {
+    background: -moz-linear-gradient(top, #ff5100 0%, #b81712 66%, #DE2C0E 100%);
+    background: -webkit-linear-gradient(top, #ff5100 0%, #b81712 66%, #DE2C0E 100%);
+    background: linear-gradient(to bottom, #ff5100 0%, #b81712 66%, #DE2C0E 100%);
+    font-size: 17px;
+    font-weight: bold;
+    color: #FFF;
+    text-align: center;
+  }
+  
+
+  /* Formulaire */
+
+fieldset {
+    /* padding-top: 65px; */
+    height: 180px;
+    border: 2px solid black;
+    max-width: 1350px;
+}
+
+legend {
+    text-align: left;
+    margin-left: 15px;
+}
+
+p {
+    font-size: 0.7rem;
+}
+
+.recap--form {
+    background-color: #ebe5e5;
+    width: 80%;
+    text-align: center;
+    margin: auto;
+  }
+
+label{
+    cursor: pointer;
+    padding: 5px;
+}
+
+input {
+    width: 90px;
+}
+
+#mail, #adresse {
+    width: 135px;
+}
+
+button {
+    font-family: 'Lobster', cursive;
+    margin-top: 17px;
+    padding: 10px;
+    background: #ebe5e5;
+    color: #000;
+    border: 2px solid #000;
+    border-radius: 4px;
+}
+
+button:hover {
+    background: -moz-linear-gradient(top, #ff5100 0%, #b81712 66%, #DE2C0E 100%);
+    background: -webkit-linear-gradient(top, #ff5100 0%, #b81712 66%, #DE2C0E 100%);
+    background: linear-gradient(to bottom, #ff5100 0%, #b81712 66%, #DE2C0E 100%);
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+}

@@ -7,7 +7,7 @@ async function getAPIWithID () {
     cardCamera(camera)
     BtnAjPanier()
     sauvegarderPanier()
-    chargerPanier()
+    // chargerPanier()
     
   } catch (e) {
     console.log(e);
@@ -15,8 +15,8 @@ async function getAPIWithID () {
 }
 getAPIWithID()
 const id = "panier"
-let panier = chargerPanier()
-
+// let panier = chargerPanier()
+let panier = []
 function cardCamera (camera) {
   let card =
   //   HTML de la card
@@ -67,13 +67,13 @@ function cardCamera (camera) {
       }
       
 // id
-function chargerPanier() {
-  const panier = localStorage.getItem(id)
-  if (panier === null) {
-      return []
-  } 
-  return JSON.parse(panier)
-}
+// function chargerPanier() {
+//   const panier = localStorage.getItem(id) 
+//   if (panier === null) {
+//       return []
+//   } 
+//   return panier
+// }
 
  
   function ajArticleAuPanier() {
@@ -115,5 +115,3 @@ function chargerPanier() {
 function sauvegarderPanier(panier) {
   localStorage.setItem(id, JSON.stringify(panier))
   }
-
-
