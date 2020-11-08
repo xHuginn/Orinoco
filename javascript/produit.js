@@ -6,7 +6,8 @@ async function getAPIWithID () {
     console.log(camera);
     cardCamera(camera)
     BtnAjPanier()
-    sauvegarderPanier()
+    
+    // sauvegarderPanier()
     // chargerPanier()
     
   } catch (e) {
@@ -62,7 +63,13 @@ function cardCamera (camera) {
         const selectBTN = document.querySelector('#select')
                 let btnAjoutPanier = document.getElementById('ajoutPanier')
                 btnAjoutPanier.addEventListener('click', AjoutPanier => {
-                    ajArticleAuPanier()
+                    // ajArticleAuPanier()
+                    let imageUrl = document.getElementById('imageUrl').src
+                    let nom = document.getElementById('name').textContent
+                    let prix = document.getElementById('price').textContent
+                    let nombreDeCameras = Number(document.querySelector('input#selectQTY').value)
+                    let lentilleChoisie = document.getElementById('select').value
+                    addItem(name, image, price, nombreDeCameras, lentilleChoisie)
                 })
       }
       
@@ -76,42 +83,96 @@ function cardCamera (camera) {
 // }
 
  
-  function ajArticleAuPanier() {
+//   function ajArticleAuPanier() {
 
-    let id = localStorage.getItem("id")
-    let imageUrl = document.getElementById('imageUrl').src
-    let name = document.getElementById('name').textContent
-    let price = document.getElementById('price').textContent
-    let nombreDeCameras = Number(document.querySelector('input#selectQTY').value)
-    let lentilleChoisie = document.getElementById('select').value
-
-
-    let article = {
-      id: id,
-      imageUrl : imageUrl,
-      name : name,
-      price : price,
-      nombreDeCameras : nombreDeCameras,
-      lentilleChoisie : lentilleChoisie
-    }
-
-    let ArtciclePresent = false
-
-       for (let [indexCamera, camera] of panier.entries()) {
-      if (article.id === camera.id && article.lentilleChoisie === camera.lentilleChoisie) {
-        panier[indexCamera].nombreDeCameras += article.nombreDeCameras
-          console.log('+1')
-          ArtciclePresent = true
-      }
-    } 
-      if (ArtciclePresent == false) {
-          panier.push(article)
-          console.log('+1 article')
-      }
-    sauvegarderPanier(panier)
-}
+//     let id = localStorage.getItem("id")
+//     let imageUrl = document.getElementById('imageUrl').src
+//     let name = document.getElementById('name').textContent
+//     let price = document.getElementById('price').textContent
+//     let nombreDeCameras = Number(document.querySelector('input#selectQTY').value)
+//     let lentilleChoisie = document.getElementById('select').value
 
 
-function sauvegarderPanier(panier) {
-  localStorage.setItem(id, JSON.stringify(panier))
-  }
+//     let article = {
+//       id: id,
+//       imageUrl : imageUrl,
+//       name : name,
+//       price : price,
+//       nombreDeCameras : nombreDeCameras,
+//       lentilleChoisie : lentilleChoisie
+//     }
+
+//     let ArtciclePresent = false
+
+//        for (let [indexCamera, camera] of panier.entries()) {
+//       if (article.id === camera.id && article.lentilleChoisie === camera.lentilleChoisie) {
+//         panier[indexCamera].nombreDeCameras += article.nombreDeCameras
+//           console.log('+1')
+//           ArtciclePresent = true
+//       }
+//     } 
+//       if (ArtciclePresent == false) {
+//           panier.push(article)
+//           console.log('+1 article')
+//       }
+//     sauvegarderPanier(panier)
+// }
+
+
+// function sauvegarderPanier(panier) {
+//   localStorage.setItem(id, JSON.stringify(panier))
+//   }
+
+
+//   function totalCamera () {
+
+//   }
+
+//   totalCamera()
+
+
+
+
+
+
+
+
+
+
+
+
+// let image = document.getElementById('imageUrl').src
+// console.log(image);
+// let nom = document.getElementById('name').textContent
+// let prix = document.getElementById('price').textContent
+// let qty = Number(document.querySelector('input#selectQTY').value)
+// let lense = document.getElementById('select').value
+
+// let addItem = function (name, image, price, nombreDeCameras, lentilleChoisie) {
+//   let oldItems = JSON.parse(localStorage.getItem('itemsArray')) || [];
+  
+  
+    
+ 
+
+//     let newItem = {
+//       image: image,
+//       nom : name,
+//       prix : prix,
+//       nombreDeCameras : qty,
+//       lentilleChoisie : lense
+//     }
+//   oldItems.push(newItem);
+  
+//   localStorage.setItem('itemsArray', JSON.stringify(oldItems));
+// };
+
+// // console.log(JSON.parse(localStorage.getItem('itemsArray')));
+
+// addItem('name1', 'image1', 'price1', 'nombre1', 'lense1');
+
+// // console.log(JSON.parse(localStorage.getItem('itemsArray')));
+
+// // addItem('name2', 'image2', 'price2');
+
+// // console.log(JSON.parse(localStorage.getItem('itemsArray')));
