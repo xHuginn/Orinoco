@@ -26,7 +26,7 @@ function cardCamera (camera) {
   //   HTML de la card
           `<div class="card">
                   <h5 id="name" class="card-title">${camera.name}</h5>
-                      <img id="imageUrl" src="${camera.imageUrl}" class="img_produit" alt="${camera.name}">
+                      <img id="imageOfCam" src="${camera.imageUrl}" class="img_produit" alt="${camera.name}">
   
                       <div class="card-body">
                       <div class="inputQTY">
@@ -78,16 +78,22 @@ function cardCamera (camera) {
                     
                     // addItem(name, number, lense)
 
-
+                    let imageOfCam = document.getElementById('imageOfCam').src
+                      localStorage.setItem('imageOfCam', imageOfCam)
+                        console.log(imageOfCam);
                     let name = document.getElementById('name').textContent
                       localStorage.setItem('name', name)
-                        console.log(name);
+                        console.log(name)
+                    let price = document.getElementById('price').textContent
+                        localStorage.setItem('price', price)
+                        console.log(price);
                     let number = Number(document.querySelector('input#selectQTY').value)
                       localStorage.setItem('number', number)
                         console.log(number);
                     let lense = document.getElementById('select').value
                       localStorage.setItem('lense', lense)
                         console.log(lense);
+
                         ajArticleAuPanier()
                 })
       }
@@ -96,19 +102,18 @@ function cardCamera (camera) {
 let ajArticleAuPanier = function () {
   let panier = JSON.parse(localStorage.getItem('panier')) || [];
   
+  // let imageOfCam = document.getElementById('imageUrl').src 
   let nom = localStorage.getItem('name')
+  let prix = document.getElementById('price').textContent 
   let nombre = Number(localStorage.getItem('number'))
   let lentille = localStorage.getItem('lense')
 //  let id = localStorage.getItem("id") 
-//  let imageUrl = document.getElementById('imageUrl').src 
-//  let nom = document.getElementById('name').textContent 
-//  let price = document.getElementById('price').textContent 
-//  let nombre = Number(document.querySelector('input#selectQTY').value)
-//  let lentille = document.getElementById('select').value
 
 
   let article = {
     name : nom,
+    // imageOfCam : image,
+    price : prix,
     number : nombre,
     lense : lentille
   };
@@ -127,21 +132,77 @@ let ArtciclePresent = false
           console.log('+1 article')
       }
   localStorage.setItem('panier', JSON.stringify(panier));
+  
+  totalPrice()
+  total()
+  totalPriceDuneCam()
+  cartCount()
 };
 
 
+function totalPrice () {
+  let total = 0
+ 
+ let panier = localStorage.getItem('panier')
+ let chercherPrixDesCam = JSON.parse(panier)
+ let result = chercherPrixDesCam.map(prixDesCam => `${prixDesCam.price}`)
+ 
+ // console.log(JSON.parse(panier));
+ console.log(result);
+ 
+let tessst = JSON.stringify(result)
+console.log(tessst);
+let test = JSON.parse(tessst)
+
+ for(price of result) {
+ total += parseInt(price)
+ 
+ }
+ 
+ console.log(total);
+ 
+ }
+
+
 function total () {
+ let total = 0
+
+let panier = localStorage.getItem('panier')
+let chercherNombreDeCam = JSON.parse(panier)
+let result = chercherNombreDeCam.map(nombredeCam => `${nombredeCam.number}`)
+
+// console.log(JSON.parse(panier));
+
+console.log(result);
+
+for(number of result) {
+total += Number(number)
+
+}
+
+console.log(total);
+
+}
+
+
+
+
+function totalPriceDuneCam () {
+
   let total = 0
 
-  let number = localStorage.getItem('panier')
+  let panier = localStorage.getItem('panier')
+  let chercherNombreDeCam = JSON.parse(panier)
 
-  console.log(number);
-  
+console.log(chercherNombreDeCam);
 
-  
+result = Number(chercherNombreDeCam.price * chercherNombreDeCam.number)
+
   console.log(total);
-}
-total()
+
+ }
+
+
 // console.log(JSON.parse(localStorage.getItem('itemsArray')));
 // addItem();
 // addItem('name1', 'image1', 'price1');

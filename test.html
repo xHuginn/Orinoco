@@ -10,12 +10,19 @@
     <script>
 
 let panier = localStorage.getItem('panier')
-      console.log(JSON.parse(panier));
-      function test(nombre){
+      // console.log(JSON.parse(panier));
+      function test(obj){
         let ul = document.createElement('ul');
-        Object.keys(nombre).forEach(function (key) {
+        Object.keys(obj).forEach(function (key) {
+
+
+
+
+
+
+
           let li = document.createElement('li');
-          let contenuDeLObjet = nombre[key];
+          let contenuDeLObjet = obj[key];
         //   console.log(contenuDeLObjet);
               li.textContent = key + ' : ' + contenuDeLObjet;
             //   console.log(key);
@@ -32,20 +39,22 @@ let panier = localStorage.getItem('panier')
       
       list(JSON.parse(panier));
       
-      function total () {
-        let total = 0
 
-      }
+      let total = 0
 
+let nombreDeCam = localStorage.getItem('panier')
+let n = JSON.parse(nombreDeCam)
+let azerty = n.map(camerap => `${camerap.number}`)
+console.log(JSON.parse(panier));
 
+console.log(azerty);
 
+for(number of azerty) {
+total += Number(number)
 
+}
 
-
-
-
-
-
+console.log(total);
 
 
 
