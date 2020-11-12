@@ -3,23 +3,14 @@ async function getAPIWithID () {
   try {
     let id = localStorage.getItem("id")
     const camera = await getProduit(id)
-    // console.log(camera);
     cardCamera(camera)
     BtnAjPanier()
-    // ajArticleAuPanier()
-    // sauvegarderPanier()
-    // chargerPanier()
     
   } catch (e) {
     console.log(e);
   }
 }
 getAPIWithID()
-const id = "panier"
-// let panier = chargerPanier()
-let panier = []
-
-
 
 function cardCamera (camera) {
   let card =
@@ -36,7 +27,7 @@ function cardCamera (camera) {
                       </div>
   
                       <select id="select" name="lentille">
-                      <option id="selected" class="disabled" selected disabled value="">Lentilles :</option>
+                      <option id="selected" class="disabled" selected disabled value="0">Lentilles :</option>
                       </select>
                       </div>
   
@@ -48,8 +39,7 @@ function cardCamera (camera) {
                               <button type="button" id="ajoutPanier" class="btn btn-outline-success">Ajouter au panier</button>
                       </div>    
               </div>`;
-          //  
-          //  <option id="newSelected"></option>
+
           content.innerHTML += card;
 
           let select = document.getElementById('select')
@@ -62,262 +52,88 @@ function cardCamera (camera) {
         }     
 
       }
-      // let name = document.getElementById('name').textContent
-      // console.log(name);
-      // let number = Number(document.querySelector('input#selectQTY').value)
-      // let lense = document.getElementById('select').value
-
+      
       function BtnAjPanier () {
         const selectBTN = document.querySelector('#select')
                 let btnAjoutPanier = document.getElementById('ajoutPanier')
                 btnAjoutPanier.addEventListener('click', AjoutPanier => {
-                    // ajArticleAuPanier()
-                    // let imageUrl = document.getElementById('imageUrl').src
-                    
-                    // let prix = document.getElementById('price').textContent
-                    
-                    // addItem(name, number, lense)
 
                     let imageOfCam = document.getElementById('imageOfCam').src
                       localStorage.setItem('imageOfCam', imageOfCam)
                         console.log(imageOfCam);
+
                     let name = document.getElementById('name').textContent
                       localStorage.setItem('name', name)
                         console.log(name)
+
                     let price = document.getElementById('price').textContent
                         localStorage.setItem('price', price)
                         console.log(price);
+
                     let number = Number(document.querySelector('input#selectQTY').value)
                       localStorage.setItem('number', number)
                         console.log(number);
+
                     let lense = document.getElementById('select').value
                       localStorage.setItem('lense', lense)
                         console.log(lense);
 
-                        ajArticleAuPanier()
+                    let total = `${number * parseInt(price)}€`
+                      localStorage.setItem('total', total)
+                        console.log(total);
+
+                  ajArticleAuPanier()
+
                 })
-      }
+              }
 
       
-let ajArticleAuPanier = function () {
+function ajArticleAuPanier  () {
   let panier = JSON.parse(localStorage.getItem('panier')) || [];
   
-  // let imageOfCam = document.getElementById('imageUrl').src 
+  // let image = document.getElementById('imageUrl').src 
   let nom = localStorage.getItem('name')
-  let prix = document.getElementById('price').textContent 
+  let prix = document.getElementById('price').textContent
   let nombre = Number(localStorage.getItem('number'))
   let lentille = localStorage.getItem('lense')
-//  let id = localStorage.getItem("id") 
+  let totalPrix = parseInt(localStorage.getItem('total'))
+    console.log(totalPrix);
 
 
   let article = {
-    name : nom,
     // imageOfCam : image,
+    name : nom,
+    lense : lentille,
     price : prix,
     number : nombre,
-    lense : lentille
+    total: totalPrix
   };
-  
-let ArtciclePresent = false
+    
+  let ArtciclePresent = false
 
-       for (let [indexCamera, camera] of panier.entries()) {
-      if (article.name === camera.name && article.lense === camera.lense) {
-        panier[indexCamera].number += article.number
-          console.log('+1')
+  let selectBTNValue = document.querySelector('#select').value
+
+    if(selectBTNValue == 0) {
+
+      alert('Choisissez une lentille !')
+
+    } else {
+      for (let [indexCamera, camera] of panier.entries()) {
+
+        if (article.name === camera.name && article.lense === camera.lense) {
+          panier[indexCamera].number += article.number
+          panier[indexCamera].total += parseInt(article.price) * article.number
+            console.log('+1')
           ArtciclePresent = true
-      }
-    } 
-      if (ArtciclePresent == false) {
-          panier.push(article)
-          console.log('+1 article')
-      }
-  localStorage.setItem('panier', JSON.stringify(panier));
-  
-  totalPrice()
-  total()
-  totalPriceDuneCam()
-  cartCount()
+        }
+      } 
+        if (ArtciclePresent == false) {
+            panier.push(article)
+              console.log('+1 article')
+        }
+
+    localStorage.setItem('panier', JSON.stringify(panier));
+      console.log(totalPrix);
+
+  }
 };
-
-
-function totalPrice () {
-  let total = 0
- 
- let panier = localStorage.getItem('panier')
- let chercherPrixDesCam = JSON.parse(panier)
- let result = chercherPrixDesCam.map(prixDesCam => `${prixDesCam.price}`)
- 
- // console.log(JSON.parse(panier));
- console.log(result);
- 
-let tessst = JSON.stringify(result)
-console.log(tessst);
-let test = JSON.parse(tessst)
-
- for(price of result) {
- total += parseInt(price)
- 
- }
- 
- console.log(total);
- 
- }
-
-
-function total () {
- let total = 0
-
-let panier = localStorage.getItem('panier')
-let chercherNombreDeCam = JSON.parse(panier)
-let result = chercherNombreDeCam.map(nombredeCam => `${nombredeCam.number}`)
-
-// console.log(JSON.parse(panier));
-
-console.log(result);
-
-for(number of result) {
-total += Number(number)
-
-}
-
-console.log(total);
-
-}
-
-
-
-
-function totalPriceDuneCam () {
-
-  let total = 0
-
-  let panier = localStorage.getItem('panier')
-  let chercherNombreDeCam = JSON.parse(panier)
-
-console.log(chercherNombreDeCam);
-
-result = Number(chercherNombreDeCam.price * chercherNombreDeCam.number)
-
-  console.log(total);
-
- }
-
-
-// console.log(JSON.parse(localStorage.getItem('itemsArray')));
-// addItem();
-// addItem('name1', 'image1', 'price1');
-
-// console.log(JSON.parse(localStorage.getItem('itemsArray')));
-
-// addItem('name2', 'image2', 'price2');
-
-// console.log(JSON.parse(localStorage.getItem('itemsArray')));
-
-      
-// id
-// function chargerPanier() {
-//   const panier = localStorage.getItem(id) 
-//   if (panier === null) {
-//       return []
-//   } 
-//   return panier
-// }
-
- 
-//   function ajArticleAuPanier(nom, image, prix, number, lense) {
-//     let oldItems = JSON.parse(localStorage.getItem('itemsArray')) || [];
-
-
-//     let id = localStorage.getItem("id")
-//     let imageUrl = document.getElementById('imageUrl').src
-//     let name = document.getElementById('name').textContent
-//     let price = document.getElementById('price').textContent
-//     let nombreDeCameras = Number(document.querySelector('input#selectQTY').value)
-//     let lentilleChoisie = document.getElementById('select').value
-
-
-//     let article = {
-//       id: id,
-//       imageUrl : imageUrl,
-//       name : name,
-//       price : price,
-//       nombreDeCameras : nombreDeCameras,
-//       lentilleChoisie : lentilleChoisie
-//     }
-
-    
-//     localStorage.setItem('itemsArray', JSON.stringify(oldItems));
-//     sauvegarderPanier(panier)
-//     let test = localStorage.getItem('itemsArray')
-//     console.log(JSON.parse(test));
-// }
-// ajArticleAuPanier('name1', 'image1', 'price1', 'nombre1', 'lense1');
-
-// function sauvegarderPanier(panier) {
-//   localStorage.setItem(id, JSON.stringify(panier))
-//   }
-
-
-//   function totalCamera () {
-
-//   }
-
-//   totalCamera()
-
-
-
-
-
-
-
-
-// let ArtciclePresent = false
-
-//        for (let [indexCamera, camera] of panier.entries()) {
-//       if (article.id === camera.id && article.lentilleChoisie === camera.lentilleChoisie) {
-//         panier[indexCamera].nombreDeCameras += article.nombreDeCameras
-//           console.log('+1')
-//           ArtciclePresent = true
-//       }
-//     } 
-//       if (ArtciclePresent == false) {
-//           panier.push(article)
-//           console.log('+1 article')
-//       }
-
-
-// let image = document.getElementById('imageUrl').src
-// console.log(image);
-// let nom = document.getElementById('name').textContent
-// let prix = document.getElementById('price').textContent
-// let qty = Number(document.querySelector('input#selectQTY').value)
-// let lense = document.getElementById('select').value
-
-// let addItem = function () {
-//   
-  
-  
-    
- 
-
-//     let newItem = {
-//       image: image,
-//       nom : name,
-//       prix : prix,
-//       nombreDeCameras : qty,
-//       lentilleChoisie : lense
-//     }
-//   oldItems.push(newItem);
-  
-//   
-// };
-
-// // console.log(JSON.parse(localStorage.getItem('itemsArray')));
-
-// addItem('name1', 'image1', 'price1', 'nombre1', 'lense1');
-
-// // console.log(JSON.parse(localStorage.getItem('itemsArray')));
-
-// // addItem('name2', 'image2', 'price2');
-
-// // console.log(JSON.parse(localStorage.getItem('itemsArray')));
