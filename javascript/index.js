@@ -93,7 +93,7 @@ function link(card, name, id) {
     let link = document.createElement('input')
     link.type="button"
     link.value="Découvrir"
-    link.addEventListener('click', ll => {
+    link.addEventListener('click', decouvrir => {
         // met le nom en sessionStorage ?
         localStorage.setItem('name', name)   
         // met l'id en sessionStorage ?  

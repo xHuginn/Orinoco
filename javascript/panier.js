@@ -5,42 +5,74 @@ let testPanier = JSON.parse(panier)
 console.log(JSON.parse(panier));
 
 function panierContent() {
-      for (let camera of testPanier) {
-  console.log('test2');
-  let cart =
-  //   HTML de la card
-        `<tr id="panierContent">
-        <td><img src="${camera.imageOfCam}" class="img_produit" alt="${camera.name}"></td>
-            <td>${camera.name}</td>
-            <td>${camera.lense}</td>
-            <td>${camera.price} €</td>
-            <td>${camera.number}</td>
-            <td>${camera.number * parseInt(camera.price)}€</td>
 
-        </tr>`;
-        tbody.innerHTML += cart;
-      }
+    if (testPanier === null) {
+        console.log('panier vide');
+        let cart = `<h2 class="emptyCart">Votre panier est vide</h2>`
+
+        emptyCart.innerHTML += cart;
+    } else {
+
+        for (let camera of testPanier) {
+            console.log('panier plein');
+            let cart =
+            //   HTML de la card
+                  `<tr id="panierContent">
+                  <td><img src="${camera.imageOfCam}" class="img_produit" alt="${camera.name}"></td>
+                      <td>${camera.name}</td>
+                      <td>${camera.lense}</td>
+                      <td>${camera.price} €</td>
+                      <td>${camera.number}</td>
+                      <td>${camera.number * parseInt(camera.price)}€</td>
+          
+                  </tr>`;
+                  tbody.innerHTML += cart;
+                }
+    }
+
+
+
+     
       // td class="totalCamera">${camera.number * parseInt(camera.price)}€</td>
 }
 panierContent()
 
 function ajoutTotalPrice() {
+    let total = 0
+    if (testPanier === null) {
+        console.log('panier vide');
+        let emptyCart = `0 €`
+
+        totalCameras.innerHTML += emptyCart;
+    } else {
+        
+        for (let camera of testPanier) {
     
-let total = 0
-
-    for (let camera of testPanier) {
-
-        let totalCam = camera.total
-            
-        total += totalCam
-            
+            let totalCam = camera.total
+                
+            total += totalCam
+                
+        }
+        totalCameras.innerHTML += total + ' €'
     }
-    totalCameras.innerHTML += total + ' €'
+
+
+
+
+
+
+
+
+    
+
 }
 ajoutTotalPrice()
 
 
-
+function supprimerPanier() {
+    localStorage.clear()
+    window.location.reload()
+}
 
 
 // function total() {
