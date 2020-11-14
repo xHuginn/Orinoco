@@ -7,7 +7,7 @@
 
   <link href="https://fonts.googleapis.com/css2?family=Anton&family=Grenze+Gotisch:wght@600;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./css/style.css">
-  <link rel="stylesheet" href="css/panier.css">
+  <link rel="stylesheet" href="./css/panier.css">
   <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
 
   <title>Orinoco | Accueil</title>
@@ -60,18 +60,22 @@
 
     <tbody id="tbody">
       <tr>
-        <td colspan="2" id="picAndName">photo + nom</td>
-        <td id="lense">lense</td>
-        <td id="price">price</td>
-        <td id="quantity">quantity</td>
-        <td id="total">total</td>
+        <td colspan="2" id="picAndName">Nom :</td>
+        <td id="lense">Lentille choisie :</td>
+        <td id="price">Prix :</td>
+        <td id="quantity">Quantité :</td>
+        <td id="total">total :</td>
       </tr>
     </tbody>
 
     </table>
 
+<div id="recapTotal" class="recap--total">
+    <h3 id="totalCameras">Sous-total </h3>
+</div>
 
 
+<div id="cart_count"></div>
 
 <!-- Formulaire -->
 
@@ -100,7 +104,7 @@
     <label for="ville">Ville <sup>*</sup></label>
     <input type="text" for="ville" name="ville" id="ville" placeholder="Paris" required />
     <br>
-    <button type="submit" id="button_1">Envoyer votre réservation</button>
+    <button type="submit" id="button_1">Passer la commande</button>
 </form>
 </fieldset>
 

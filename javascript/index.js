@@ -111,3 +111,9 @@ function card(cameras) {
         cardParameter(cards.name, cards.imageUrl, cards.price, cards._id);
     }
 }
+
+
+
+
+
+

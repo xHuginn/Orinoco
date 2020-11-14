@@ -77,7 +77,9 @@ function cardCamera (camera) {
                     let lense = document.getElementById('select').value
                       localStorage.setItem('lense', lense)
                         console.log(lense);
-
+                    console.log('total');
+                    console.log(number);
+                    console.log(price);
                     let total = `${number * parseInt(price)}€`
                       localStorage.setItem('total', total)
                         console.log(total);
@@ -87,13 +89,22 @@ function cardCamera (camera) {
                 })
               }
 
-      
-function ajArticleAuPanier  () {
+function charger () {
   let panier = JSON.parse(localStorage.getItem('panier')) || [];
+  return panier
+}
+
+function sauvegarder (panier) {
+  localStorage.setItem('panier', JSON.stringify(panier));
+}
+      
+function ajArticleAuPanier () {
   
-  // let image = document.getElementById('imageUrl').src 
+  let panier = charger()
+    
+  let image = localStorage.getItem('imageOfCam')
   let nom = localStorage.getItem('name')
-  let prix = document.getElementById('price').textContent
+  let prix = parseInt(document.getElementById('price').textContent)
   let nombre = Number(localStorage.getItem('number'))
   let lentille = localStorage.getItem('lense')
   let totalPrix = parseInt(localStorage.getItem('total'))
@@ -101,7 +112,7 @@ function ajArticleAuPanier  () {
 
 
   let article = {
-    // imageOfCam : image,
+    imageOfCam : image,
     name : nom,
     lense : lentille,
     price : prix,
@@ -132,7 +143,7 @@ function ajArticleAuPanier  () {
               console.log('+1 article')
         }
 
-    localStorage.setItem('panier', JSON.stringify(panier));
+        sauvegarder(panier)
       console.log(totalPrix);
 
   }
