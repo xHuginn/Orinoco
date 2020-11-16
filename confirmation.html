@@ -48,84 +48,8 @@
 
 <!-- Récap commande -->
 
-<section class="recap">
+<section class="confirmation">
 
-  <table class="recap--commande">
-
-    <thead>
-      <tr>
-        <th colspan="6">Votre panier :</th>
-      </tr>
-    </thead>
-
-    <tbody id="tbody">
-      <tr class="info">
-        <td colspan="2" id="picAndName">Nom :</td>
-        <td id="lense">Lentille choisie :</td>
-        <td id="price">Prix :</td>
-        <td id="quantity">Quantité :</td>
-        <td id="total">total :</td>
-      </tr>
-    </tbody>
-    </table>
-
-    <div id="emptyCart"></div>
-
-    <form id="deleteForm">
-      <button onclick="supprimerPanier()" type="button">Supprimer le panier</button>
-    </form>
-    
-
-<div id="recapTotal" class="recap--total">
-    <h3 id="totalCameras">Sous-total : </h3>
-</div>
-
-
-<div id="cart_count"></div>
-
-<!-- Formulaire -->
-
-
-  <fieldset id="test" class="recap--form">
-    <legend>
-        <h3>Pour finaliser votre commande...</h3>
-        <p><small>Les * sont obligatoires</small></p>
-    </legend>
-<form id="form" method="post">
-  
-  <div class="infos">
-    <label for="nom">Nom <sup>*</sup></label>
-    <input type="text" for="nom" name="nom" id="nom" placeholder="Jean" required/>
-  </div>
-
-  <div class="infos">
-    <label for="prenom">Prenom <sup>*</sup></label>
-    <input type="text" for="prenom" name="prenom" id="prenom" placeholder="Dupont" required/>
-  </div>
-
-  <div class="infos">
-    <label for="mail">Email <sup>*</sup></label>
-    <input type="text" for="mail" name="mail" id="mail" placeholder="exemple@mail.fr" required/>
-  </div>
-
-  <div class="infos">
-    <label for="adresse">Adresse <sup>*</sup></label>
-    <input type="text" for="adresse" name="adresse" id="adresse" placeholder="3 rue de la madeleine" required />
-  </div>
-
-  <div class="infos">
-    <label for="codePostal">Code postal <sup>*</sup></label>
-    <input type="number" for="codePostal" name="codePostal" id="codePostal" placeholder="75000" required />  
-  </div>
-  <div class="infos">
-    <label for="ville">Ville <sup>*</sup></label>
-    <input type="text" for="ville" name="ville" id="ville" placeholder="Paris" required />
-  </div>
-
-  <button type="button" id="button_1" onclick="sendData()">Passer la commande</button>
-  <!-- <input type="submit" value="Add Todo"> -->
-</form>
-</fieldset>
 
 </section>
 <!-- /Contenu page -->
