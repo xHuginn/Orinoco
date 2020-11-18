@@ -95,31 +95,31 @@
   
   <div class="infos">
     <label for="nom">Nom <sup>*</sup></label>
-    <input type="text" for="nom" name="nom" id="nom" placeholder="Jean" required/>
+    <input type="text" for="nom" name="nom" id="nom" placeholder="Jean" pattern="[a-zA-Z]{1,30}" required/>
   </div>
 
   <div class="infos">
     <label for="prenom">Prenom <sup>*</sup></label>
-    <input type="text" for="prenom" name="prenom" id="prenom" placeholder="Dupont" required/>
+    <input type="text" for="prenom" name="prenom" id="prenom" placeholder="Dupont" pattern="[a-zA-Z]{1,30}" required/>
   </div>
 
   <div class="infos">
     <label for="mail">Email <sup>*</sup></label>
-    <input type="text" for="mail" name="mail" id="mail" placeholder="exemple@mail.fr" required/>
+    <input type="text" for="mail" name="mail" id="mail" placeholder="exemple@mail.fr" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required/>
   </div>
 
   <div class="infos">
     <label for="adresse">Adresse <sup>*</sup></label>
-    <input type="text" for="adresse" name="adresse" id="adresse" placeholder="3 rue de la madeleine" required />
+    <input type="text" for="adresse" name="adresse" id="adresse" placeholder="3 rue de la madeleine" pattern="[a-zA-Z]{1,90}" required />
   </div>
 
   <div class="infos">
     <label for="codePostal">Code postal <sup>*</sup></label>
-    <input type="number" for="codePostal" name="codePostal" id="codePostal" placeholder="75000" required />  
+    <input type="number" for="codePostal" name="codePostal" id="codePostal" placeholder="75000" pattern="[0-9]{5,}" required />  
   </div>
   <div class="infos">
     <label for="ville">Ville <sup>*</sup></label>
-    <input type="text" for="ville" name="ville" id="ville" placeholder="Paris" required />
+    <input type="text" for="ville" name="ville" id="ville" placeholder="Paris" pattern="[a-zA-Z]{1,90}" required />
   </div>
 
   <button type="button" id="button_1" onclick="sendData()">Passer la commande</button>

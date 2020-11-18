@@ -91,68 +91,74 @@ function sendData () {
 
     // document.location.href=`../confirmation.html`
 
+    
+    console.log(panier);
 
-
-    const options = {
-        method: 'POST',
-        body: JSON.stringify({
-            firstName : firstName,
-            lastName : lastName,
-            mail : mail,
-            address : address,
-            codePostal : codePostal,
-            city : city
-        }),
-        headers: {
-            'Content-Type': 'application/json'
-        }
+    let cart = []
+console.log(cart);
+    for(let article of panier){
+        cart.push(article.id)
     }
-     
-    fetch('http://localhost:3000/api/cameras/order', {
-        method: 'POST',
-        body: JSON.stringify(data)
-    })
-        .then(res => res.json())
-        .then(res => console.log(res));
+    
+console.log(cart);
 
+    let donnees = {
+        data,
+        cart
+    }
+
+console.log(donnees);
+
+const options = {
+    method: "POST",
+    headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(donnees)
 }
+     
+    
+async function getPOST(data) {
+    try {
+        // {} OU OPTIONS
+        console.log(donnees)
+        let response = await fetch("http://localhost:3000/api/cameras/order", {
+            method: "POST",
+            headers: {
+            //   'Accept': 'application/json',
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+          })
+      
+        let res = await response.json()
+
+        console.log(res);
+
+    } catch (e) {
+      console.log(e);
+    }
+  }
+  getPOST(donnees)
+
+// }
 
 
+// async function getPOST() {
+//     try {
+//         // {} OU OPTIONS
+//         console.log(donnees)
+//         let response = await fetch("http://localhost:3000/api/cameras/order", options)
+      
+//         let res = await response.json()
 
+//         console.log(res);
+        // document.location.href=`./confirmation.html`
 
-
-
-
-    // let form = document.getElementById('form')
-
-    // form.addEventListener('submit', function(e){
-    //     e.preventDefault()
-
-    //     let firstName = document.getElementById('prenom').value
-    //     let lastName = document.getElementById('nom').value
-    //     let mail = document.getElementById('mail').value
-    //     let address = document.getElementById('adresse').value
-    //     let codePostal = document.getElementById('codePostal').value
-    //     let city = document.getElementById('ville').value
-
-    //     fetch("http://localhost:3000/api/cameras/order",{
-    //       method: 'POST',
-    //       body:JSON.stringify({
-    //         firstName : firstName,
-    //         lastName : lastName,
-    //         mail : mail,
-    //         address : address,
-    //         codePostal : codePostal,
-    //         city : city
-    //       }),
-    //       headers:{
-    //           "Content-Type":"appliation/json; charset=UTF-8"
-    //       }
-    //     })
-    //     .then(function(response){
-    //           return response.json()
-    //       })
-    //       .then(function(data){
-    //           console.log(data);
-    //       })
-    //   }) 
+//     } catch (e) {
+//       console.log(e);
+//     }
+//   }
+//   getPOST()
+}

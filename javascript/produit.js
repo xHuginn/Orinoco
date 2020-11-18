@@ -1,7 +1,7 @@
+let id = localStorage.getItem("id")
 
 async function getAPIWithID () {
   try {
-    let id = localStorage.getItem("id")
     const camera = await getProduit(id)
     cardCamera(camera)
     BtnAjPanier()
@@ -11,7 +11,6 @@ async function getAPIWithID () {
   }
 }
 getAPIWithID()
-
 function cardCamera (camera) {
   let card =
   //   HTML de la card
@@ -49,6 +48,7 @@ function cardCamera (camera) {
           option.value = `${camera.lenses[i]}`
           select.appendChild(option)
           option.appendChild(p)
+
         }     
 
       }
@@ -84,6 +84,8 @@ function cardCamera (camera) {
                       localStorage.setItem('total', total)
                         console.log(total);
 
+                    localStorage.setItem(id, id)
+                      console.log(id);
                   ajArticleAuPanier()
 
                 })
@@ -117,7 +119,8 @@ function ajArticleAuPanier () {
     lense : lentille,
     price : prix,
     number : nombre,
-    total: totalPrix
+    total: totalPrix,
+    id: id
   };
     
   let ArtciclePresent = false
