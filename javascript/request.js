@@ -54,3 +54,29 @@ const getPanier = async function() {
         console.log(e);
     }
 }
+
+
+// CONFIRMATION
+
+async function orderID(data) {
+    try {
+        // {} OU OPTIONS
+        // console.log(donnees)
+        let response = await fetch("http://localhost:3000/api/cameras/order", {
+            method: "POST",
+            headers: {
+            //   'Accept': 'application/json',
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+          })
+      
+        let res = await response.json()
+
+        localStorage.setItem('orderID', JSON.stringify(res))
+        return res
+
+    } catch (e) {
+      console.log(e);
+    }
+  }

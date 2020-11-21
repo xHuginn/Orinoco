@@ -101,7 +101,7 @@ input {
     width: 135px;
 }
 
-button {
+button, #button_1 {
     font-family: 'Lobster', cursive;
     margin-top: 17px;
     padding: 10px;
@@ -111,25 +111,13 @@ button {
     border-radius: 4px;
 }
 
-button:hover {
+button:hover, #button_1:hover {
     background: -moz-linear-gradient(top, #ff5100 0%, #b81712 66%, #DE2C0E 100%);
     background: -webkit-linear-gradient(top, #ff5100 0%, #b81712 66%, #DE2C0E 100%);
     background: linear-gradient(to bottom, #ff5100 0%, #b81712 66%, #DE2C0E 100%);
     color: rgb(255, 255, 255);
     cursor: pointer;
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

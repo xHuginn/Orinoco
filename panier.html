@@ -104,25 +104,23 @@
   </div>
 
   <div class="infos">
-    <label for="mail">Email <sup>*</sup></label>
-    <input type="text" for="mail" name="mail" id="mail" placeholder="exemple@mail.fr" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required/>
+    <label for="email">Email <sup>*</sup></label>
+    <input type="text" for="email" name="email" id="email" placeholder="exemple@mail.fr" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required/>
   </div>
 
   <div class="infos">
     <label for="adresse">Adresse <sup>*</sup></label>
-    <input type="text" for="adresse" name="adresse" id="adresse" placeholder="3 rue de la madeleine" pattern="[a-zA-Z]{1,90}" required />
+    <input type="text" for="adresse" name="adresse" id="adresse" placeholder="3 rue de la madeleine" pattern="[\w\s]{5,80}" required />
   </div>
 
-  <div class="infos">
-    <label for="codePostal">Code postal <sup>*</sup></label>
-    <input type="number" for="codePostal" name="codePostal" id="codePostal" placeholder="75000" pattern="[0-9]{5,}" required />  
-  </div>
   <div class="infos">
     <label for="ville">Ville <sup>*</sup></label>
     <input type="text" for="ville" name="ville" id="ville" placeholder="Paris" pattern="[a-zA-Z]{1,90}" required />
   </div>
 
-  <button type="button" id="button_1" onclick="sendData()">Passer la commande</button>
+  <input type="submit" id="button_1" value="Valider" onclick="testValidityForm()" >
+  <!-- onclick="sendData()" -->
+  <!-- <button type="button" id="button_1" onclick="sendData()">Passer la commande</button> -->
   <!-- <input type="submit" value="Add Todo"> -->
 </form>
 </fieldset>
