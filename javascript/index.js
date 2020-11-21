@@ -28,7 +28,7 @@ function changeImg() {
 window.onload = changeImg;
 
 
-
+// Récupère la requete depuis request.js
 async function getAPI () {
     try {
       const cameras = await getCameras()
@@ -42,6 +42,7 @@ async function getAPI () {
   getAPI()
 
 
+//   Indique les paramètres de la carte (d'un article) et appelle toutes les autres fonctions
 function cardParameter(txt, url, price, id) {
     let content = document.getElementById('content');
     content.setAttribute('class', 'content')

@@ -1,5 +1,7 @@
+// Récupère l'id du produit
 let id = localStorage.getItem("id")
 
+// effectue la requete depuis request.js
 async function getAPIWithID () {
   try {
     const camera = await getProduit(id)
@@ -11,6 +13,7 @@ async function getAPIWithID () {
   }
 }
 getAPIWithID()
+// Créer la carte
 function cardCamera (camera) {
   let card =
   //   HTML de la card
@@ -53,6 +56,7 @@ function cardCamera (camera) {
 
       }
       
+      // Ajoute les éléments au panier en les envoyant d'abord au localStorage
       function BtnAjPanier () {
         const selectBTN = document.querySelector('#select')
                 let btnAjoutPanier = document.getElementById('ajoutPanier')
@@ -77,33 +81,33 @@ function cardCamera (camera) {
                     let lense = document.getElementById('select').value
                       localStorage.setItem('lense', lense)
                         console.log(lense);
-                    console.log('total');
-                    console.log(number);
-                    console.log(price);
+
                     let total = `${number * parseInt(price)}€`
                       localStorage.setItem('total', total)
                         console.log(total);
 
                     localStorage.setItem(id, id)
                       console.log(id);
+
                   ajArticleAuPanier()
 
                 })
               }
-
+// Charge le panier en fonction de s'il est plein ou vide puis le retourne
 function charger () {
   let panier = JSON.parse(localStorage.getItem('panier')) || [];
   return panier
 }
-
+// Sauvegarde le panier dans le localStorage
 function sauvegarder (panier) {
   localStorage.setItem('panier', JSON.stringify(panier));
 }
       
+// ajoute un article au panier
 function ajArticleAuPanier () {
   
   let panier = charger()
-    
+  // Récupère les infos de BtnAjPanier()
   let image = localStorage.getItem('imageOfCam')
   let nom = localStorage.getItem('name')
   let prix = parseInt(document.getElementById('price').textContent)
@@ -112,7 +116,7 @@ function ajArticleAuPanier () {
   let totalPrix = parseInt(localStorage.getItem('total'))
     console.log(totalPrix);
 
-
+// Met les infos dans un objet
   let article = {
     imageOfCam : image,
     name : nom,
@@ -122,9 +126,9 @@ function ajArticleAuPanier () {
     total: totalPrix,
     id: id
   };
-    
+  // indique si l'article est présent et l'initialise à false
   let ArtciclePresent = false
-
+// Si aucune lentille n'est choisie, lance une alert
   let selectBTNValue = document.querySelector('#select').value
 
     if(selectBTNValue == 0) {
@@ -132,8 +136,10 @@ function ajArticleAuPanier () {
       alert('Choisissez une lentille !')
 
     } else {
+      // Compare les infos grâce à .entries()
       for (let [indexCamera, camera] of panier.entries()) {
 
+        // Si un article est === à la caméra et à la lentille alors on ajoute le nombre au localStorage puis on indique que l'article est présent
         if (article.name === camera.name && article.lense === camera.lense) {
           panier[indexCamera].number += article.number
           panier[indexCamera].total += parseInt(article.price) * article.number
@@ -141,6 +147,7 @@ function ajArticleAuPanier () {
           ArtciclePresent = true
         }
       } 
+      // Si l'article n'est pas présent alors on l'ajoute au panier
         if (ArtciclePresent == false) {
             panier.push(article)
               console.log('+1 article')
