@@ -154,7 +154,11 @@ function ajArticleAuPanier () {
         }
 
         sauvegarder(panier)
-      console.log(totalPrix);
+        window.location.reload(TotalArticle)
+          console.log(totalPrix);
 
   }
 };
+
+
+
