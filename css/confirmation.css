@@ -1,16 +1,36 @@
 .confirmation {
     background-color: rgba(255, 255, 255, 0.7);
     padding: 50px;
+    height: 750px;
 }
 
-.img_produit {
-    max-height: 250px;
-    height: auto;
-    width: 80%;
-    margin: 16px auto;
-    border-radius: 4px;
-  }
+#confirmation {
+    text-align: center;
+    margin: auto;
+}
 
+.recapCommande {
+    margin-top: 35px;
+}
 
+table {
+    margin: 15px auto;
+}
 
+h3, h5 {
+    font-size: 1.5rem;
+    margin-bottom: 8px;
+}
+
+h5 {
+    margin-top: 28px;
+}
+
+p {
+    margin: 4px;
+}
+
+p, table {
+    font-size: 1.2rem;
+}
   

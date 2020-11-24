@@ -111,7 +111,8 @@ margin: 5px;
         }
           
         ul li {
-            margin: 10px;
+            font-size: 0.9rem;
+            margin: 10px 0;
             list-style-type: none;
         }
         

@@ -25,8 +25,8 @@ function confirmationContent() {
         <p>${orderId.contact.firstName} ${orderId.contact.lastName}</p> 
         <p>Adresse email : ${orderId.contact.email}</p>
         <p>adresse : ${orderId.contact.address} ${orderId.contact.city} </p>
-        <table class="">
-
+        
+        <table>
         <thead>
           <tr>
             <th colspan="6">Vos articles :</th>

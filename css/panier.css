@@ -5,7 +5,7 @@ table {
 }
 
 .recap {
-    height: 1900px;
+    height: 1200px;
     background-color: rgba(255, 255, 255, 0.7);
     display: flex;
     align-items: center;
@@ -28,9 +28,6 @@ table {
     width: 17%;
   }
 
-  /* .recap--commande tbody td {
-    font-size: 1rem;
-  } */
   .recap--commande tr:nth-child(even) {
     background: #ece6e6;
   }
@@ -38,7 +35,7 @@ table {
     background: -moz-linear-gradient(top, #ff5100 0%, #b81712 66%, #DE2C0E 100%);
     background: -webkit-linear-gradient(top, #ff5100 0%, #b81712 66%, #DE2C0E 100%);
     background: linear-gradient(to bottom, #ff5100 0%, #b81712 66%, #DE2C0E 100%);
-    font-size: 17px;
+    font-size: 1.5rem;
     font-weight: bold;
     color: #FFF;
     text-align: center;
@@ -51,15 +48,9 @@ table {
 
 
 
-
-
-
-
-
-
-
-
-
+#totalCameras {
+  font-size: 1.2rem;
+}
 
 
 
@@ -67,7 +58,8 @@ table {
 
 fieldset {
     /* padding-top: 65px; */
-    height: 180px;
+    height: auto;
+    max-height: 800px;
     border: 2px solid black;
     max-width: 1350px;
 }
@@ -77,8 +69,8 @@ legend {
     margin-left: 15px;
 }
 
-p {
-    font-size: 0.7rem;
+small {
+    font-size: 0.8rem;
 }
 
 .recap--form {
@@ -97,7 +89,7 @@ input {
     width: 90px;
 }
 
-#mail, #adresse {
+#email, #adresse {
     width: 135px;
 }
 
@@ -119,49 +111,14 @@ button:hover, #button_1:hover {
     cursor: pointer;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 #total {
   padding: 25px 15px;
-}
-
-
-
-
-
-#totalCameras {
-  font-size: 1.2rem;
-}
-
-
-
-
-.recap--total {
-
 }
 
 #deleteForm {
   margin-top: 0;
   margin-bottom: 25px;
 }
-
-
-
-
 
 .img_produit {
   max-height: 250px;
@@ -171,30 +128,9 @@ button:hover, #button_1:hover {
   border-radius: 4px;
 }
 
-.emptyCart {
-}
-
-
 #panierContent {
   font-size: 1.2rem;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 form {
@@ -209,8 +145,73 @@ form input {
   margin-bottom: 16px;
 }
 
-/* mise en forme du form */
 
-#prenom {
+
+
+/*/////////////////////////////
+//////////////////////////////
+//////////////////////////////
+//////////////////////////////
+       Mobile
+//////////////////////////////
+//////////////////////////////
+//////////////////////////////
+//////////////////////////////
+*/
+@media screen and (min-width: 320px) and (max-width: 426px) {
+
+/* Panier */
+
+.recap {
+    width: 100%;
+  }
+  
+   .recap--commande {
+    width: 100%;
+  }
+  .recap--commande td, .recap--commande th {
+    padding: 8px;
+  }
+
+  .recap--commande td{
+    font-size: 0.9rem;
+  }
+
+  .img_produit {
+    display: none;
+  }
 
 }
+
+
+  
+
+/*
+//////////////////////////////
+//////////////////////////////
+//////////////////////////////
+//////////////////////////////
+//////////////////////////////
+ Desktop 4k
+ //////////////////////////////
+ //////////////////////////////
+ //////////////////////////////
+ //////////////////////////////
+*/
+@media screen and (min-width: 1440px) {
+
+  .recap {
+    width: 70%;
+  }
+
+  /* Formulaire */
+
+button, #button_1 {
+    margin-top: 45px;
+}
+
+form {
+  font-size: 1.2rem;
+}
+
+  }
