@@ -77,7 +77,8 @@
     
 
 <div id="recapTotal" class="recap--total">
-    <h3 id="totalCameras">Sous-total : </h3>
+    <h3 id="totalCameras">Sous-total </h3>
+    <p id="totalCamerasPrix"></p>
 </div>
 
 
@@ -105,17 +106,17 @@
 
   <div class="infos">
     <label for="email">Email <sup>*</sup></label>
-    <input type="text" for="email" name="email" id="email" placeholder="exemple@mail.fr" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required/>
+    <input type="text" for="email" name="email" id="email" placeholder="exemple@mail.fr" pattern="^[A-Za-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required/>
   </div>
 
   <div class="infos">
     <label for="adresse">Adresse <sup>*</sup></label>
-    <input type="text" for="adresse" name="adresse" id="adresse" placeholder="3 rue de la madeleine" pattern="[\w\s]{5,80}" required />
+    <input type="text" for="adresse" name="adresse" id="adresse" placeholder="3 rue de la madeleine" pattern="^.{1,80}$" required />
   </div>
 
   <div class="infos">
     <label for="ville">Ville <sup>*</sup></label>
-    <input type="text" for="ville" name="ville" id="ville" placeholder="Paris" pattern="[a-zA-Z]{1,90}" required />
+    <input type="text" for="ville" name="ville" id="ville" placeholder="Paris" pattern="^.{1,80}$" required />
   </div>
 
   <input type="submit" id="button_1" value="Valider" onclick="testValidityForm()" >
@@ -194,6 +195,7 @@
 
 
 <script src="./javascript/request.js"></script>
+<script src="./javascript/fonctionGlobal.js"></script>
 <script src="./javascript/panier.js"></script>
 
  </body>

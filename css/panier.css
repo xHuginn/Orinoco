@@ -5,7 +5,7 @@ table {
 }
 
 .recap {
-    height: 1200px;
+    height: fit-content;
     background-color: rgba(255, 255, 255, 0.7);
     display: flex;
     align-items: center;
@@ -78,6 +78,7 @@ small {
     width: 95%;
     text-align: center;
     margin: auto;
+    margin-bottom: 15px;
   }
 
 label{
@@ -145,8 +146,14 @@ form input {
   margin-bottom: 16px;
 }
 
-
-
+#recapTotal {
+  display: flex;
+  margin-bottom: 8px;
+}
+#totalCamerasPrix {
+  font-size: 1.2rem;
+  padding-left: 3px;
+}
 
 /*/////////////////////////////
 //////////////////////////////

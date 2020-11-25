@@ -42,7 +42,7 @@ function ajoutTotalPrice() {
         console.log('panier vide');
         let emptyCart = `0 €`
 
-        totalCameras.innerHTML += emptyCart;
+        totalCamerasPrix.innerHTML += emptyCart;
     } else {
         
         for (let camera of panier) {
@@ -52,7 +52,7 @@ function ajoutTotalPrice() {
             total += totalCam
                 
         }
-        totalCameras.innerHTML += total + ' €'
+        totalCamerasPrix.innerHTML += total + ' €'
     }
 
 }
@@ -138,4 +138,33 @@ function sendData () {
     
 }
 
-// git clone + lien dans github 
+
+
+
+  // Fonction qui ajoute le nombre total d'articles dans le panier (sous-total)
+  function TotalArticle() {
+    // let totalCameras = document.getElementById('TotalArticle')
+  
+    let total = 0
+  
+    // Récupère le panier depuis le localStorage
+    const RecupPanier = localStorage.getItem('panier')
+  
+    let panier = JSON.parse(RecupPanier)
+  
+      if (!panier) {
+          console.log('panier vide');  
+      } else {
+          
+          for (let camera of panier) {
+      
+              let totalCam = camera.number
+                  
+              total += totalCam
+                  
+          }
+          totalCameras.innerHTML += "( " +total + " article(s)" + " ) :"
+      }
+  
+  }
+  TotalArticle()
