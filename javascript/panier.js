@@ -65,7 +65,7 @@ function supprimerPanier() {
 }
 
 // Indique que si le formulaire est bien remplis, alors la fonction sendData() se lance
-isTrue = false
+
 function testValidityForm() {
 
     (function() {     
@@ -74,7 +74,6 @@ function testValidityForm() {
             event.preventDefault();
             event.stopPropagation();
             console.log('accept');
-            isTrue = true
             sendData()
           }, false);
       }());
