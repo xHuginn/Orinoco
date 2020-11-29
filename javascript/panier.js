@@ -30,6 +30,7 @@ function panierContent() {
           
                   </tr>`;
                   tbody.innerHTML += cart;
+
                 }
     }
 }
@@ -76,9 +77,7 @@ function testValidityForm() {
             console.log('accept');
             sendData()
           }, false);
-      }());
-
-      
+      }());    
 }
 
 // Envoi les données du formulaire dans la requete POST et envoi l'utilisateur sur la page de confirmation

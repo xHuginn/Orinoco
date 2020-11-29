@@ -95,9 +95,7 @@ function link(card, name, id) {
     link.type="button"
     link.value="Découvrir"
     link.addEventListener('click', decouvrir => {
-        // met le nom en sessionStorage ?
-        localStorage.setItem('name', name)   
-        // met l'id en sessionStorage ?  
+        localStorage.setItem('name', name)
         localStorage.setItem('id', id)
         document.location.href=`./produit.html`
         }) 
