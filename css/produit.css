@@ -1,5 +1,6 @@
 #content {
   margin-bottom: 85px;
+  min-height: calc(100vh - 300px);
 }
 
 /* Carte produit */

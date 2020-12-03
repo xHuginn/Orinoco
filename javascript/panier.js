@@ -43,7 +43,7 @@ function ajoutTotalPrice() {
         console.log('panier vide');
         let emptyCart = `0 €`
 
-        totalCamerasPrix.innerHTML += emptyCart;
+        totalCamerasPrix.innerHTML += ' : ' + emptyCart;
     } else {
         
         for (let camera of panier) {

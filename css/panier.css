@@ -2,13 +2,6 @@ body {
   height: 100%;
 }
 
-/* footer {
-  position: absolute;
-} */
-
-
-
-
 
 
 /* Panier */
@@ -19,7 +12,7 @@ table {
 
 .recap {
     height: fit-content;
-    min-height: 100%;
+    min-height: calc(100vh - 300px);
     position: relative;
     background-color: rgba(255, 255, 255, 0.7);
     display: flex;
@@ -30,12 +23,25 @@ table {
     margin-bottom: 35px;
   }
   
+  .recap--titre {
+    background: -moz-linear-gradient(top, #ff5100 0%, #b81712 66%, #DE2C0E 100%);
+    background: -webkit-linear-gradient(top, #ff5100 0%, #b81712 66%, #DE2C0E 100%);
+    background: linear-gradient(to bottom, #ff5100 0%, #b81712 66%, #DE2C0E 100%);
+    color: #fff;
+    width: 95%;
+    max-width: 1350px;
+    text-align: center;
+    margin: 0;
+    padding: 8px;
+    font-size: 1.3rem;
+  }
+
    .recap--commande {
     background-color: #C4C4C4;
     width: 95%;
     max-width: 1350px;
     text-align: center;
-    margin: 35px auto;
+    margin: 0 auto 35px auto;
   }
   .recap--commande td, .recap--commande th {
     border-bottom: 2px solid #000;
@@ -188,15 +194,19 @@ form input {
     width: 100%;
   }
   
-   .recap--commande {
+   .recap--commande, .recap--titre {
     width: 100%;
   }
   .recap--commande td, .recap--commande th {
     padding: 8px;
   }
 
+  .info {
+    font-size: 1rem;
+  }
+
   .recap--commande td{
-    font-size: 0.9rem;
+    font-size: 0.7rem;
   }
 
   .img_produit {
@@ -224,6 +234,10 @@ form input {
 
   .recap {
     width: 70%;
+  }
+
+  .recap--titre {
+    width: 95%;
   }
 
   /* Formulaire */
