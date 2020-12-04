@@ -1,4 +1,17 @@
 // Carousel 
+
+// Creation div carousel
+let carousel = document.getElementById('carousel')
+let div = document.createElement('div')
+    div.setAttribute('class', 'carousel')
+// creation image qui contiendra le carousel
+let imageCarousel = document.createElement('img')
+    imageCarousel.setAttribute('name', 'carousel')
+    imageCarousel.setAttribute('class', 'slide')
+
+carousel.appendChild(div)
+div.appendChild(imageCarousel)
+
 // Init de i
 let i = 0;
 // Tableau des imgs du carousel
