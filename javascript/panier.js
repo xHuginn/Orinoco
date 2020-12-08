@@ -53,18 +53,14 @@ let addressVilleValidation = /^.{1,80}$/
 let emailValidation = /^[A-Za-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/
 
 function testValidityForm(event) {
-    event.preventDefault();    
-    console.log('coucou');
-    console.log(prenomNomValidation)
-   
+    event.preventDefault(); 
+
     if (prenomNomValidation.test(document.getElementById('prenom').value)
         && prenomNomValidation.test(document.getElementById('nom').value)
         && emailValidation.test(document.getElementById('email').value) 
         && addressVilleValidation.test(document.getElementById('ville').value) 
         && addressVilleValidation.test(document.getElementById('adresse').value)) {
- 
         sendData()
-    
 } else {
     alert('Veuillez remplir correctement les champs du formulaire')
     return
