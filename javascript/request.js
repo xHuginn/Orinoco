@@ -3,7 +3,6 @@
 const getCameras = async function() {
     try {
         let response = await fetch('http://localhost:3000/api/cameras')
-        
         if (response.ok) {
             let data = await response.json()
             return data
@@ -19,9 +18,7 @@ const getCameras = async function() {
 // Récupère la caméra choisie grâce à son id 
 const getProduit = async function(id) {
     try {
-        
-        let response = await fetch(`http://localhost:3000/api/cameras/${id}`)
-        
+        let response = await fetch(`http://localhost:3000/api/cameras/${id}`)  
         if (response.ok) {
             let data = await response.json()
             return data
@@ -31,8 +28,8 @@ const getProduit = async function(id) {
     } catch (e) {
         console.log(e);
     }
-}
-
+  }
+  
 // CONFIRMATION
 // Requete POST 
 async function orderID(data) {
@@ -40,17 +37,13 @@ async function orderID(data) {
         let response = await fetch("http://localhost:3000/api/cameras/order", {
             method: "POST",
             headers: {
-            //   'Accept': 'application/json',
               'Content-Type': 'application/json'
             },
             body: JSON.stringify(data)
           })
-      
         let res = await response.json()
-
         localStorage.setItem('orderID', JSON.stringify(res))
         return res
-
     } catch (e) {
       console.log(e);
     }

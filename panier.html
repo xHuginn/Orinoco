@@ -91,33 +91,30 @@
   
   <div class="infos">
     <label for="nom">Nom <sup>*</sup></label>
-    <input type="text" name="nom" id="nom" placeholder="Jean" pattern="[a-zA-Z]{1,30}" required/>
+    <input type="text" name="nom" id="nom" placeholder="Jean"  required/>
   </div>
 
   <div class="infos">
     <label for="prenom">Prenom <sup>*</sup></label>
-    <input type="text" name="prenom" id="prenom" placeholder="Dupont" pattern="[a-zA-Z]{1,30}" required/>
+    <input type="text" name="prenom" id="prenom" placeholder="Dupont" required/>
   </div>
 
   <div class="infos">
     <label for="email">Email <sup>*</sup></label>
-    <input type="text" name="email" id="email" placeholder="exemple@mail.fr" pattern="^[A-Za-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required/>
+    <input type="text" name="email" id="email" placeholder="exemple@mail.fr" required/>
   </div>
 
   <div class="infos">
     <label for="adresse">Adresse <sup>*</sup></label>
-    <input type="text" name="adresse" id="adresse" placeholder="3 rue de la madeleine" pattern="^.{1,80}$" required />
+    <input type="text" name="adresse" id="adresse" placeholder="3 rue de la madeleine" required />
   </div>
 
   <div class="infos">
     <label for="ville">Ville <sup>*</sup></label>
-    <input type="text" name="ville" id="ville" placeholder="Paris" pattern="^.{1,80}$" required />
+    <input type="text" name="ville" id="ville" placeholder="Paris" required />
   </div>
 
-  <input type="submit" id="button_1" value="Valider" onclick="testValidityForm()" >
-  <!-- onclick="sendData()" -->
-  <!-- <button type="button" id="button_1" onclick="sendData()">Passer la commande</button> -->
-  <!-- <input type="submit" value="Add Todo"> -->
+  <input type="submit" id="button_1" value="Valider" onclick="testValidityForm(event)">
 </form>
 </fieldset>
 

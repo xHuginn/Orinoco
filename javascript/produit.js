@@ -1,47 +1,50 @@
-// Récupère l'id du produit
-let id = localStorage.getItem("id")
+// // Récupère l'id du produit via les searchParams
+let params = (new URL(document.location)).searchParams;
+// prend l'id de l'URL
+let id = params.get('id');
+
 
 // effectue la requete depuis request.js
 async function getAPIWithID () {
   try {
     const camera = await getProduit(id)
     cardCamera(camera)
-    BtnAjPanier()
-    
+    btnAjPanier()
   } catch (e) {
     console.log(e);
   }
 }
 getAPIWithID()
+
+
 // Créer la carte
-function cardCamera (camera) {
+function cardCamera(camera) {
   let card =
   //   HTML de la card
           `<div class="card">
-                  <h5 id="name" class="card-title">${camera.name}</h5>
-                      <img id="imageOfCam" src="${camera.imageUrl}" class="img_produit" alt="${camera.name}">
+              <h5 id="name" class="card-title">${camera.name}</h5>
+              <img id="imageOfCam" src="${camera.imageUrl}" class="img_produit" alt="${camera.name}">
   
-                      <div class="card-body">
-                      <div class="inputQTY">
-                          <label for="selectQTY">Quantité :</label>
-                          <input type="number" id="selectQTY" name="selectQTY"
-                          min="1" max="30" value="1">
-                      </div>
+              <div class="card-body">
+                <div class="inputQTY">
+                  <label for="selectQTY">Quantité :</label>
+                  <input type="number" id="selectQTY" name="selectQTY"
+                  min="1" max="30" value="1">
+                </div>
   
-                      <select id="select" name="lentille">
-                      <option id="selected" class="disabled" selected disabled value="0">Lentilles :</option>
-                      </select>
-                      </div>
+                <select id="select" name="lentille">
+                  <option id="selected" class="disabled" selected disabled value="0">Lentilles :</option>
+                </select>
+              </div>
   
-                      <div class="infos">
-                          <div class="details">
-                              <p id="description" class="card-text">${camera.description}</p>
-                              <p id="price" class="card-text">${camera.price / 100}€</p>
-                          </div>
-                              <button type="button" id="ajoutPanier" class="btn btn-outline-success">Ajouter au panier</button>
-                      </div>    
+              <div class="infos">
+                  <div class="details">
+                      <p id="description" class="card-text">${camera.description}</p>
+                      <p id="price" class="card-text">${camera.price / 100}€</p>
+                  </div>
+                    <button type="button" id="ajoutPanier" class="btn btn-outline-success">Ajouter au panier</button>
+                  </div>    
               </div>`;
-
           content.innerHTML += card;
 
           let select = document.getElementById('select')
@@ -51,48 +54,38 @@ function cardCamera (camera) {
           option.value = `${camera.lenses[i]}`
           select.appendChild(option)
           option.appendChild(p)
-
         }     
-
       }
       
       // Ajoute les éléments au panier en les envoyant d'abord au localStorage
-      function BtnAjPanier () {
+      function btnAjPanier () {
         const selectBTN = document.querySelector('#select')
-                let btnAjoutPanier = document.getElementById('ajoutPanier')
-                btnAjoutPanier.addEventListener('click', AjoutPanier => {
+        let btnAjoutPanier = document.getElementById('ajoutPanier')
+        btnAjoutPanier.addEventListener('click', AjoutPanier => {
 
-                    let imageOfCam = document.getElementById('imageOfCam').src
-                      localStorage.setItem('imageOfCam', imageOfCam)
-                        console.log(imageOfCam);
+        let imageOfCam = document.getElementById('imageOfCam').src
+        localStorage.setItem('imageOfCam', imageOfCam)
 
-                    let name = document.getElementById('name').textContent
-                      localStorage.setItem('name', name)
-                        console.log(name)
+        let name = document.getElementById('name').textContent
+        localStorage.setItem('name', name)
 
-                    let price = document.getElementById('price').textContent
-                        localStorage.setItem('price', price)
-                        console.log(price);
+        let price = document.getElementById('price').textContent
+        localStorage.setItem('price', price)
 
-                    let number = Number(document.querySelector('input#selectQTY').value)
-                      localStorage.setItem('number', number)
-                        console.log(number);
+        let number = Number(document.querySelector('input#selectQTY').value)
+        localStorage.setItem('number', number)
 
-                    let lense = document.getElementById('select').value
-                      localStorage.setItem('lense', lense)
-                        console.log(lense);
+        let lense = document.getElementById('select').value
+        localStorage.setItem('lense', lense)
 
-                    let total = `${number * parseInt(price)}€`
-                      localStorage.setItem('total', total)
-                        console.log(total);
+        let total = `${number * parseInt(price)}€`
+        localStorage.setItem('total', total)
 
-                    localStorage.setItem(id, id)
-                      console.log(id);
+        localStorage.setItem(id, id)
 
-                  ajArticleAuPanier()
-
-                })
-              }
+        ajArticleAuPanier()
+      })
+    }
 // Charge le panier en fonction de s'il est plein ou vide puis le retourne
 function charger () {
   let panier = JSON.parse(localStorage.getItem('panier')) || [];
@@ -114,7 +107,6 @@ function ajArticleAuPanier () {
   let nombre = Number(localStorage.getItem('number'))
   let lentille = localStorage.getItem('lense')
   let totalPrix = parseInt(localStorage.getItem('total'))
-    console.log(totalPrix);
 
 // Met les infos dans un objet
   let article = {
@@ -127,38 +119,27 @@ function ajArticleAuPanier () {
     id: id
   };
   // indique si l'article est présent et l'initialise à false
-  let ArtciclePresent = false
+  let articlePresent = false
 // Si aucune lentille n'est choisie, lance une alert
   let selectBTNValue = document.querySelector('#select').value
 
     if(selectBTNValue == 0) {
-
       alert('Choisissez une lentille !')
-
     } else {
       // Compare les infos grâce à .entries()
       for (let [indexCamera, camera] of panier.entries()) {
-
         // Si un article est === à la caméra et à la lentille alors on ajoute le nombre au localStorage puis on indique que l'article est présent
         if (article.name === camera.name && article.lense === camera.lense) {
           panier[indexCamera].number += article.number
           panier[indexCamera].total += parseInt(article.price) * article.number
-            console.log('+1')
-          ArtciclePresent = true
+          articlePresent = true
         }
       } 
       // Si l'article n'est pas présent alors on l'ajoute au panier
-        if (ArtciclePresent == false) {
+        if (articlePresent == false) {
             panier.push(article)
-              console.log('+1 article')
         }
 
         sauvegarder(panier)
-        window.location.reload(TotalArticle)
-          console.log(totalPrix);
-
-  }
-};
-
-
-
+        window.location.reload(totalArticle)
+}};

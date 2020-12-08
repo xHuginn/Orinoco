@@ -34,7 +34,6 @@ function changeImg() {
     }
 // changement de l'img 
     setTimeout('changeImg()', time)
-
 }
 
 // active au chargement de l'img
@@ -45,12 +44,10 @@ window.onload = changeImg;
 async function getAPI () {
     try {
       const cameras = await getCameras()
-      console.log(cameras);
       card(cameras) 
     } catch (e) {
       console.log(e);
     }
-   
   }
   getAPI()
 
@@ -72,8 +69,8 @@ function cardParameter(txt, url, price, id) {
     cardBody.setAttribute('class', 'card-body')
     divCard.appendChild(cardBody)
 
-    Price(cardBody, price);
-    link(cardBody, txt, id);
+    priceCam(cardBody, price);
+    link(cardBody, id);
 }
 // fonction appelle du nom
 function name(card, txt) {
@@ -94,27 +91,29 @@ function image(card, url) {
 }
 
 // fonction appelle du prix
-function Price(card, price) {
-      let cardTextCreate = document.createElement('p')
+function priceCam(card, price) {
+    let cardTextCreate = document.createElement('p')
     let newcardTextCreate = document.createTextNode(`${price/100} €`); 
     cardTextCreate.setAttribute('class', 'card-text')
     card.appendChild(cardTextCreate)
     cardTextCreate.appendChild(newcardTextCreate)
 }
 // fonction appelle du lien
-function link(card, name, id) {
-    let form = document.createElement('form')
-    let link = document.createElement('input')
-    link.type="button"
-    link.value="Découvrir"
-    link.addEventListener('click', decouvrir => {
-        localStorage.setItem('name', name)
-        localStorage.setItem('id', id)
-        document.location.href=`./produit.html`
-        }) 
-    card.appendChild(form);
-    form.appendChild(link);
-    link.setAttribute('class', 'btn btn-sm btn-outline-secondary')
+function link(card, id) {
+    // let form = document.createElement('form')
+    let link = document.createElement('a')
+    link.setAttribute('class', 'link')
+    link.innerHTML = 'Découvrir'
+    link.href = `./produit.html?id=${id}`
+    // link.type="button"
+    // link.value="Découvrir"
+    // link.addEventListener('click', decouvrir => {
+    //     localStorage.setItem('id', id)
+        
+    // }) 
+    card.appendChild(link);
+    // form.appendChild(link);
+    // link.setAttribute('class', 'btn btn-sm btn-outline-secondary')
 }
 // fonction qui prends l'API 
 function card(cameras) {
@@ -123,9 +122,3 @@ function card(cameras) {
         cardParameter(cards.name, cards.imageUrl, cards.price, cards._id);
     }
 }
-
-
-
-
-
-
