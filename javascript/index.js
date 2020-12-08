@@ -100,20 +100,11 @@ function priceCam(card, price) {
 }
 // fonction appelle du lien
 function link(card, id) {
-    // let form = document.createElement('form')
     let link = document.createElement('a')
     link.setAttribute('class', 'link')
     link.innerHTML = 'Découvrir'
     link.href = `./produit.html?id=${id}`
-    // link.type="button"
-    // link.value="Découvrir"
-    // link.addEventListener('click', decouvrir => {
-    //     localStorage.setItem('id', id)
-        
-    // }) 
     card.appendChild(link);
-    // form.appendChild(link);
-    // link.setAttribute('class', 'btn btn-sm btn-outline-secondary')
 }
 // fonction qui prends l'API 
 function card(cameras) {
