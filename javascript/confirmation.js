@@ -1,18 +1,16 @@
 // Récupère l'orderID de la requete POST
-const getorderId = localStorage.getItem("orderID")
+const getorderId = localStorage.getItem("orderID");
 // Parse la requete
-let orderId = JSON.parse(getorderId)
+let orderId = JSON.parse(getorderId);
 
 // Récupère le panier
-const recupPanier = localStorage.getItem('panier')
+const recupPanier = localStorage.getItem("panier");
 
-let panier = JSON.parse(recupPanier)
+let panier = JSON.parse(recupPanier);
 
 // Affiche les infos de l'orderID + le panier et clean le localStorage lorsque l'utilisateur revient à la page d'acceuil
 function confirmationContent() {
-
-    let confirmationCommande = 
-      `<h3>Merci pour votre commande !</h3>
+	let confirmationCommande = `<h3>Merci pour votre commande !</h3>
 
       <p>Votre commande numéro <span>${orderId.orderId}2</span> arrivera d'ici deux semaines !</p>
 
@@ -42,34 +40,34 @@ function confirmationContent() {
         <p id="totalPrice">Total : </p>
 
         <h5><a href="index.html" onclick="supprLocalStorage()">Retourner à l'acceuil</a></h5>
-      </div>`
-  
-      confirmation.innerHTML += confirmationCommande
-    
-    for (let camera of panier) {
-      let cart =
-      //   HTML de la card
-        `<tr id="panierContent">
+      </div>`;
+
+	confirmation.innerHTML += confirmationCommande;
+
+	for (let camera of panier) {
+		let cart =
+			//   HTML de la card
+			`<tr id="panierContent">
             <td>${camera.name}</td>
             <td>${camera.lense}</td>
             <td>${camera.number}</td>
         </tr>`;
-          tbody.innerHTML += cart;
-    }
-        ajoutTotalPrice() 
+		tbody.innerHTML += cart;
+	}
+	ajoutTotalPrice();
 }
-  confirmationContent()
+confirmationContent();
 
-    // Indique le total du panier
-  function ajoutTotalPrice() {
-    let total = 0
-      for (let camera of panier) {
-        let totalCam = camera.total
-        total += totalCam        
-          }
-          totalPrice.innerHTML += total + ' €'
-  }
-  // Clear le panier dans le localStorage
-  function supprLocalStorage() {
-    localStorage.clear()
-  }
+// Indique le total du panier
+function ajoutTotalPrice() {
+	let total = 0;
+	for (let camera of panier) {
+		let totalCam = camera.total;
+		total += totalCam;
+	}
+	totalPrice.innerHTML += total + " €";
+}
+// Clear le panier dans le localStorage
+function supprLocalStorage() {
+	localStorage.clear();
+}
